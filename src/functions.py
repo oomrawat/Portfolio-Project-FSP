@@ -255,12 +255,12 @@ def one_quarter_stock_selection(buying_date, holding_period, returns_type, max_n
 
             row[stock] = return_percentage
         
-        # append the row to the new DataFrame
-        if isinstance(row, pd.Series):
-            row = row.to_frame().T
+        # Convert the 'row' dictionary into a DataFrame with a single row
+        row_df = pd.DataFrame([row])
 
-        # Use concat to add the new row to the existing DataFrame
-        returns_3_month_periods_df = pd.concat([returns_3_month_periods_df, row], ignore_index=True)
+        # Use concat to add the new row DataFrame to the existing DataFrame
+        returns_3_month_periods_df = pd.concat([returns_3_month_periods_df, row_df], ignore_index=True)
+
         
     if last_x_years == 1:
         buying_date_minus_1_year = str(int(buying_date[:4])-1)+buying_date[4:]
@@ -442,12 +442,11 @@ def one_month_stock_selection(buying_date, holding_period, returns_type, max_non
 
             row[stock] = return_percentage
         
-        # append the row to the new DataFrame
-        if isinstance(row, pd.Series):
-            row = row.to_frame().T
+        # Convert the 'row' dictionary into a DataFrame with a single row
+        row_df = pd.DataFrame([row])
 
-        # Use concat to add the new row to the existing DataFrame
-        returns_3_month_periods_df = pd.concat([returns_3_month_periods_df, row], ignore_index=True)
+        # Use concat to add the new row DataFrame to the existing DataFrame
+        returns_3_month_periods_df = pd.concat([returns_3_month_periods_df, row_df], ignore_index=True)
     
     if last_x_years == 1:
         buying_date_minus_1_year = str(int(buying_date[:4])-1)+buying_date[4:]
