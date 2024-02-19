@@ -1,6 +1,8 @@
 import pandas as pd
 import sys
-from src.functions import stock_selection_weight_allocation, adjust_portfolio, generate_and_save_data
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
+from functions import stock_selection_weight_allocation, adjust_portfolio, generate_and_save_data
 from datetime import datetime
 
 def custom_round(number):
