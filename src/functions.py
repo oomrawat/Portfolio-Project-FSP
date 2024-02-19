@@ -257,6 +257,9 @@ def one_quarter_stock_selection(buying_date, holding_period, returns_type, max_n
         
         # Convert the 'row' dictionary into a DataFrame with a single row
         row_df = pd.DataFrame([row])
+        
+        returns_3_month_periods_df = returns_3_month_periods_df.dropna(axis=1, how='all')
+        row_df = row_df.dropna(axis=1, how='all')
 
         # Use concat to add the new row DataFrame to the existing DataFrame
         returns_3_month_periods_df = pd.concat([returns_3_month_periods_df, row_df], ignore_index=True)
@@ -335,9 +338,9 @@ def one_quarter_stock_selection(buying_date, holding_period, returns_type, max_n
         std_dev_last_13 = last_13_returns.std()
         avg_last_13 = last_13_returns.mean()
 
-        daily_avg_ret_all_time = all_stocks_df.pct_change().iloc[1:].mean()[stock]
+        daily_avg_ret_all_time = all_stocks_df.pct_change(fill_method=None).iloc[1:].mean()[stock]
+        daily_avg_ret_last_1_year = last_1_year_stock_df.pct_change(fill_method=None).iloc[1:].mean()[stock]
 
-        daily_avg_ret_last_1_year = last_1_year_stock_df.pct_change().iloc[1:].mean()[stock]
 
         # Append the calculated values to the data list
         data.append([stock, daily_avg_ret_all_time, positive_returns_count, non_positive_returns_count, std_dev_returns, avg_returns, 
@@ -445,6 +448,9 @@ def one_month_stock_selection(buying_date, holding_period, returns_type, max_non
         # Convert the 'row' dictionary into a DataFrame with a single row
         row_df = pd.DataFrame([row])
 
+        returns_3_month_periods_df = returns_3_month_periods_df.dropna(axis=1, how='all')
+        row_df = row_df.dropna(axis=1, how='all')
+
         # Use concat to add the new row DataFrame to the existing DataFrame
         returns_3_month_periods_df = pd.concat([returns_3_month_periods_df, row_df], ignore_index=True)
     
@@ -517,9 +523,9 @@ def one_month_stock_selection(buying_date, holding_period, returns_type, max_non
         std_dev_last_13 = last_13_returns.std()
         avg_last_13 = last_13_returns.mean()
 
-        daily_avg_ret_all_time = all_stocks_df.pct_change().iloc[1:].mean()[stock]
+        daily_avg_ret_all_time = all_stocks_df.pct_change(fill_method=None).iloc[1:].mean()[stock]
 
-        daily_avg_ret_last_1_year = last_1_year_stock_df.pct_change().iloc[1:].mean()[stock]
+        daily_avg_ret_last_1_year = last_1_year_stock_df.pct_change(fill_method=None).iloc[1:].mean()[stock]
 
         # Append the calculated values to the data list
         data.append([stock, daily_avg_ret_all_time, positive_returns_count, non_positive_returns_count, std_dev_returns, avg_returns, 
