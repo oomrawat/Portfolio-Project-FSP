@@ -1,0 +1,49 @@
+backtesting_results_1:
+
+- Prev. 3 Years and 1 Year Data for stock selection
+- Prev. 1 Year Data for weight allocation
+
+backtesting_results_2:
+
+- Prev. 3 Years and 1 Year Data for stock selection
+- Prev. 2 Year Data for weight allocation
+
+backtesting_results_3:
+
+- Prev. 3 Years and 2 Year Data for stock selection
+- Prev. 1 Year Data for weight allocation
+
+backtesting_results_4:
+
+- Prev. 3 Years and 2 Year Data for stock selection
+- Prev. 2 Year Data for weight allocation
+
+backtesting_results_5:
+
+- Prev. 3 Years and 0.5 Year Data for stock selection
+- Prev. 0.5 Year Data for weight allocation
+
+backtesting_results_6:
+
+- Prev. 3 Years and 1 Year Data for stock selection
+- Prev. 0.5 Year Data for weight allocation
+
+backtesting_results_7:
+
+- Prev. 3 Years and 0.5 Year Data for stock selection
+- Prev. 1 Year Data for weight allocation
+
+backtesting_results_8:
+
+- Prev. 3 Years and 0.25 Year Data for stock selection
+- Prev. 0.25 Year Data for weight allocation
+
+backtesting_results_9:
+
+- Prev. 3 Years and 0.5 Year Data for stock selection
+- Prev. 0.25 Year Data for weight allocation
+
+backtesting_results_10:
+
+- Prev. 3 Years and 0.25 Year Data for stock selection
+- Prev. 0.5 Year Data for weight allocation

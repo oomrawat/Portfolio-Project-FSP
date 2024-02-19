@@ -1,0 +1,230 @@
+Stock Selection Strategy 1:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses simple returns
+- Holding period 1 quarter
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Returns Count <= 15 (out of a total of 34)
+- filter 4 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 2:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses log returns
+- Holding period 1 quarter
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Returns Count <= 15 (out of a total of 34)
+- filter 4 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 3:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses simple returns
+- Holding period 1 month
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Returns Count <= 15 (out of a total of 34)
+- filter 4 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 4:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses log returns
+- Holding period 1 month
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Returns Count <= 15 (out of a total of 34)
+- filter 4 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 5:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses simple returns
+- Holding period 1 quarter
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Returns Count <= 10 (out of a total of 34)
+- filter 4 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 6:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses log returns
+- Holding period 1 quarter
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Returns Count <= 10 (out of a total of 34)
+- filter 4 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 7:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses simple returns
+- Holding period 1 month
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Returns Count <= 10 (out of a total of 34)
+- filter 4 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 8:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses log returns
+- Holding period 1 month
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Returns Count <= 10 (out of a total of 34)
+- filter 4 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 9:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses simple returns
+- Holding period 1 quarter
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 10:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses log returns
+- Holding period 1 quarter
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 11:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses simple returns
+- Holding period 1 month
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 12:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses log returns
+- Holding period 1 month
+- filter 1 = Daily Average Returns All 3MPs > 0
+- filter 2 = Daily Average Returns Last 13 3MPs (1 Year) > 0
+- filter 3 = Non-Positive Last 13 3MPs (1 Year) Count == 0
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 13:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses simple returns
+- Holding period 1 quarter
+- filter 1 = Least 50 Non-Positive Last 13 3MPs (1 Year) Count
+- filter 2 = Highest 30 Daily Average Return (1 Year)
+- Execute The Weight Allocation Strategys
+
+Stock Selection Strategy 14:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses log returns
+- Holding period 1 quarter
+- filter 1 = Least 50 Non-Positive Last 13 3MPs (1 Year) Count
+- filter 2 = Highest 30 Daily Average Return (1 Year)
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 15:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses simple returns
+- Holding period 1 month
+- filter 1 = Least 50 Non-Positive Last 13 3MPs (1 Year) Count
+- filter 2 = Highest 30 Daily Average Return (1 Year)
+- Execute The Weight Allocation Strategy
+
+Stock Selection Strategy 16:
+- Generate all 3 month periods in the last 3 years before the buying date
+- Uses log returns
+- Holding period 1 month
+- filter 1 = Least 50 Non-Positive Last 13 3MPs (1 Year) Count
+- filter 2 = Highest 30 Daily Average Return (1 Year)
+- Execute The Weight Allocation Strategy
+
+
+####################################################################################
+
+Weight Allocation Strategy 1:
+- Equally weight all stocks
+
+* the data analysis of all of the weight allocation strategies from 2 to 7 would be based on last 1 year's data from the buying date if the holding period is 1 quarter
+* another alternative is to use 2 year's data
+
+Weight Allocation Strategy 2:
+- If stocks are more than 8:
+    - Maximized Return Optimization (no stock more than 25% weightage and max annual standard deviation as 40%)
+    - Pick the 8 with heighest weightages
+    - Maximized Return Optimization (no stock more than 25% weightage and max annual standard deviation as 40%)
+- Else:
+    - Maximized Return Optimization (no stock more than 25% weightage and max annual standard deviation as 40%)
+
+Weight Allocation Strategy 3:
+- If stocks are more than 8:
+    - Maximized Return Optimization (no stock more than 40% weightage and max annual standard deviation as 40%)
+    - Pick the 8 with heighest weightages
+    - Maximized Return Optimization (no stock more than 40% weightage and max annual standard deviation as 40%)
+- Else:
+    - Maximized Return Optimization (no stock more than 40% weightage and max annual standard deviation as 40%)
+
+Weight Allocation Strategy 4:
+- If stocks are more than 8:
+    - Maximized Sharpe Ratio Optimization (no stock more than 25% weightage)
+    - Pick the 8 with heighest weightages
+    - Maximized Sharpe Ratio Optimization (no stock more than 25% weightage)
+- Else:
+    - Maximized Sharpe Ratio Optimization (no stock more than 25% weightage)
+
+Weight Allocation Strategy 5:
+- If stocks are more than 8:
+    - Maximized Sharpe Ratio Optimization (no stock more than 40% weightage)
+    - Pick the 8 with heighest weightages
+    - Maximized Sharpe Ratio Optimization (no stock more than 40% weightage)
+- Else:
+    - Maximized Sharpe Ratio Optimization (no stock more than 40% weightage)
+
+Weight Allocation Strategy 6:
+- If stocks are more than 8:
+    - Minimized Variance (no stock more than 25% weightage and min annual returns as 30%)
+    - Pick the 8 with heighest weightages
+    - Minimized Variance (no stock more than 25% weightage and min annual returns as 30%)
+- Else:
+    - Minimized Variance (no stock more than 25% weightage and min annual returns as 30%)
+
+Weight Allocation Strategy 7:
+- If stocks are more than 8:
+    - Minimized Variance (no stock more than 40% weightage and min annual returns as 30%)
+    - Pick the 8 with heighest weightages
+    - Minimized Variance (no stock more than 40% weightage and min annual returns as 30%)
+- Else:
+    - Minimized Variance (no stock more than 40% weightage and min annual returns as 30%)
+
+Weight Allocation Strategy 8:
+- Minimized Variance (no stock more than 25% weightage and min annual returns as 20%)
+- Maximized Returns (no stock more than 25% weightage and max annual standard deviation as 20%)
+- Pick the top 4 from both according to weightage and if common stocks are found take more to have minimum 8
+- Maximized Sharpe Ratio (no stock more than 25% weightage)
+
+Weight Allocation Strategy 9:
+- Minimized Variance (no stock more than 40% weightage and min annual returns as 20%)
+- Maximized Returns (no stock more than 40% weightage and max annual standard deviation as 20%)
+- Pick the top 4 from both according to weightage and if common stocks are found take more to have minimum 8
+- Maximized Sharpe Ratio (no stock more than 40% weightage)
+
+Weight Allocation Strategy 10:
+- Maximized Sharpe Ratio Optimization (no stock more than 40% weightage)
+- Maximized Returns Optimization (no stock more than 40% weightage, max annual standard deviation as 30%)
+- Minimized Variance Optimization (no stock more than 40% weightage, min annual return as 30%)
+- Pick all the stocks that have a minimum weightage of 10% in all of the above
+- Maximized Returns Optimization (no stock more than 20% weightage, max annual standard deviation as 30%)
+
+Weight Allocation Strategy 11:
+- Maximized Sharpe Ratio Optimization (no stock more than 25% weightage)
+- Maximized Returns Optimization (no stock more than 25% weightage, max annual standard deviation as 30%)
+- Minimized Variance Optimization (no stock more than 25% weightage, min annual return as 30%)
+- Pick all the stocks that have a minimum weightage of 10% in all of the above
+- Maximized Returns Optimization (no stock more than 20% weightage, max annual standard deviation as 30%)
