@@ -92,8 +92,10 @@ def calculate_investment(portfolio_weights, stock_prices, buying_date, amount_av
 
 def get_govt_bond_data():
 
-    sys.path.append(str(Path(__file__).resolve().parent.parent / 'data'))
-    govt_bond_df = pd.read_csv('India 10-Year Bond Yield Historical Data.csv')
+    current_dir = Path(__file__).resolve().parent
+    csv_file = current_dir.parent / 'data' / 'India 10-Year Bond Yield Historical Data.csv'
+    govt_bond_df = pd.read_csv(csv_file)
+
     govt_bond_df = govt_bond_df[['Date','Price']]
     govt_bond_df.index = govt_bond_df['Date']
     govt_bond_df = govt_bond_df.drop('Date', axis=1)
@@ -103,8 +105,10 @@ def get_govt_bond_data():
 
 def get_all_stock_data(buying_date):
 
-    sys.path.append(str(Path(__file__).resolve().parent.parent / 'data'))
-    all_stocks_df = pd.read_csv('all_stock_data.csv', index_col=0)
+    current_dir = Path(__file__).resolve().parent
+    csv_file = current_dir.parent / 'data' / 'all_stock_data.csv'
+
+    all_stocks_df = pd.read_csv(csv_file, index_col=0)
     all_stocks_df.index = pd.to_datetime(all_stocks_df.index)
     all_stocks_df = all_stocks_df.sort_index()
     
@@ -130,13 +134,13 @@ def get_all_stock_data(buying_date):
         all_stocks_df_final = all_stocks_df
     else:
         generate_and_save_data(start_date, end_date)
-        all_stocks_df_2 = pd.read_csv('all_stock_data.csv', index_col=0)
+        all_stocks_df_2 = pd.read_csv(csv_file, index_col=0)
         all_stocks_df_2.index = pd.to_datetime(all_stocks_df_2.index)
         all_stocks_df_2 = all_stocks_df_2.sort_index()
         all_stocks_df_2 = all_stocks_df_2.iloc[1:]
         all_stocks_df_final = pd.concat([all_stocks_df, all_stocks_df_2])
         all_stocks_df_final = all_stocks_df_final.drop_duplicates()
-        all_stocks_df_final.to_csv('all_stock_data.csv')
+        all_stocks_df_final.to_csv(csv_file)
 
     return all_stocks_df
 
