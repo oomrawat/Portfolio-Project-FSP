@@ -256,8 +256,12 @@ def one_quarter_stock_selection(buying_date, holding_period, returns_type, max_n
             row[stock] = return_percentage
         
         # append the row to the new DataFrame
-        returns_3_month_periods_df = returns_3_month_periods_df.append(row, ignore_index=True)
-    
+        if isinstance(row, pd.Series):
+            row = row.to_frame().T
+
+        # Use concat to add the new row to the existing DataFrame
+        returns_3_month_periods_df = pd.concat([returns_3_month_periods_df, row], ignore_index=True)
+        
     if last_x_years == 1:
         buying_date_minus_1_year = str(int(buying_date[:4])-1)+buying_date[4:]
 
@@ -439,7 +443,11 @@ def one_month_stock_selection(buying_date, holding_period, returns_type, max_non
             row[stock] = return_percentage
         
         # append the row to the new DataFrame
-        returns_3_month_periods_df = returns_3_month_periods_df.append(row, ignore_index=True)
+        if isinstance(row, pd.Series):
+            row = row.to_frame().T
+
+        # Use concat to add the new row to the existing DataFrame
+        returns_3_month_periods_df = pd.concat([returns_3_month_periods_df, row], ignore_index=True)
     
     if last_x_years == 1:
         buying_date_minus_1_year = str(int(buying_date[:4])-1)+buying_date[4:]
