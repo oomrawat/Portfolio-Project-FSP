@@ -6,3 +6,4 @@ matplotlib
 scipy
 python-dateutil
 streamlit
+plotly
