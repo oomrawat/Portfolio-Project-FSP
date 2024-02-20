@@ -665,6 +665,93 @@ def stock_selection_weight_allocation(buying_date, holding_period, returns_type,
 
     return portfolio, selling_date, best_method
 
+def stock_selection_weight_allocation_appversion(buying_date, holding_period, returns_type, max_non_positive_returns_count, weight_allocation_strategy, all_stocks_df, govt_bond_df, filters, last_x_years, last_x_years_opt, spinner_status, progress_callback=None):
+    '''
+    The function takes all the below given arguments to filter and select stocks based on the defined rules in strategies.txt and calls the appropriate weight allocation strtegy function and returns the final portfolio.
+
+    Args:
+
+        buying_date (string): it is a string of the buying date in the format 'yyyy-mm-dd'
+
+        holding_period (string): it can be either '1q' (1 quarter) or '1m' (1 month)
+
+        returns_type (string): it can be either 'LR' (log returns) or 'SR' (simple returns)
+
+        max_non_positive_returns_count (integer): it can be any number between 0 and 34 but from the ideas thought of so far it can either be 15 or 10
+    
+        weight_allocation_strategy (integer): it can be anything from the 7 weight allocation strategies thought of so far (s1, s2, s3, s4, s5, s6, or s7)
+
+        all_stocks_df (pandas dataframe): it is the pandas dataframe of all the historical stock prices for the dates used while generating the dataframe
+
+        govt_bond_df (pandas dataframe): it is the pandas dataframe of government bond data that will be use further in some of the weight allocation strategies
+
+        filters (integer): it is the number of filters to be applied and for now it can either be 3 or 4
+
+    Returns:
+
+        portfolio (dictionary of string:float type): a dictionary of symbols chosen as the keys and their weightages as the values
+
+        selling_date (string): date on which the portfolio should be sold according to the strategy
+
+        best_method (string): it is the best method out of the 3 different optimization algorthims that the weight allocation strategies are using just for analysis
+    '''
+    progress = 10
+
+    progress_callback(5, progress)
+
+    spinner_status.write('Selecting Stocks...')
+
+    if holding_period == '1q':
+        selected_stocks, selling_date = one_quarter_stock_selection(buying_date, holding_period, returns_type, max_non_positive_returns_count, all_stocks_df, filters, last_x_years)
+    elif holding_period == '1m':
+        selected_stocks, selling_date = one_month_stock_selection(buying_date, holding_period, returns_type, max_non_positive_returns_count, all_stocks_df, filters, last_x_years)
+
+    progress_callback(6, progress)
+
+    if last_x_years_opt == 1:
+        buying_date_minus_x_year = str(int(buying_date[:4])-1)+buying_date[4:]
+
+    elif last_x_years_opt == 2:
+        buying_date_minus_x_year = str(int(buying_date[:4])-2)+buying_date[4:]
+
+    elif last_x_years_opt == 0.5:
+        year = buying_date[:4]
+        month = buying_date[5:7]
+        day = buying_date[8:10]
+        if int(month) <= 6:
+            year = str(int(year)-1)
+            month = str(12+(int(month)-6))
+        else:
+            month = str(int(month)-6)
+        if len(month) == 1:
+            month = '0'+month
+        buying_date_minus_x_year = year+'-'+month+'-'+day
+    
+    elif last_x_years_opt == 0.25:
+        year = buying_date[:4]
+        month = buying_date[5:7]
+        day = buying_date[8:10]
+        if int(month) <= 3:
+            year = str(int(year)-1)
+            month = str(12+(int(month)-3))
+        else:
+            month = str(int(month)-3)
+        if len(month) == 1:
+            month = '0'+month
+        buying_date_minus_x_year = year+'-'+month+'-'+day
+
+    buying_date_minus_x_year = get_closest_valid_date(buying_date_minus_x_year)[:10]
+
+    progress_callback(7, progress)
+
+    spinner_status.write('Allocating Weights...')
+
+    portfolio, best_method = prep_call_weight_allocation_strategy(returns_type, buying_date_minus_x_year, buying_date, selected_stocks, weight_allocation_strategy, all_stocks_df, govt_bond_df)
+
+    progress_callback(8, progress)
+
+    return portfolio, selling_date, best_method
+
 ##########################################################################
 ##########################################################################
     

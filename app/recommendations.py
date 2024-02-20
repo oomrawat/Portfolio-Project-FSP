@@ -2,7 +2,7 @@ import pandas as pd
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
-from functions import stock_selection_weight_allocation, adjust_portfolio, generate_and_save_data
+from functions import stock_selection_weight_allocation_appversion, adjust_portfolio, generate_and_save_data
 from datetime import datetime
 
 def custom_round(number):
@@ -144,7 +144,7 @@ def get_all_stock_data(buying_date):
 
     return all_stocks_df
 
-def get_recommendations(investment_value, strategy, buying_date, progress_callback=None):
+def get_recommendations(investment_value, strategy, buying_date, spinner_status, progress_callback=None):
     
     progress = 10
 
@@ -176,6 +176,8 @@ def get_recommendations(investment_value, strategy, buying_date, progress_callba
     
     progress_callback(1, progress)
 
+    spinner_status.write('Fetching Data...')
+
     filters = 4
     if stock_selection_strategy in [1,2,5,6,9,10,13,14]:
         holding_period = '1q'
@@ -198,6 +200,8 @@ def get_recommendations(investment_value, strategy, buying_date, progress_callba
         max_non_positive_returns_count = None
         filters = 2
 
+    spinner_status.write('This will take a while please be patient...')
+
     progress_callback(2, progress)
 
     govt_bond_df = get_govt_bond_data()
@@ -209,7 +213,7 @@ def get_recommendations(investment_value, strategy, buying_date, progress_callba
 
     progress_callback(4, progress)
 
-    portfolio_weights, sell_date, best_method = stock_selection_weight_allocation(buying_date, holding_period, returns_type, max_non_positive_returns_count, weight_allocation_strategy, all_stocks_df, govt_bond_df, filters, last_x_years, last_x_years_opt)
+    portfolio_weights, sell_date, best_method = stock_selection_weight_allocation_appversion(buying_date, holding_period, returns_type, max_non_positive_returns_count, weight_allocation_strategy, all_stocks_df, govt_bond_df, filters, last_x_years, last_x_years_opt, spinner_status, progress_callback=progress_callback)
 
     progress_callback(9, progress)
     
@@ -217,7 +221,6 @@ def get_recommendations(investment_value, strategy, buying_date, progress_callba
 
     progress_callback(10, progress)
 
-    # portfolio, price_dict, total_investment = calculate_investment(portfolio_weights, all_stocks_df, buying_date, investment_value)
     portfolio, price_dict, total_investment = calculate_shares_to_buy_with_prices(portfolio_weights, all_stocks_df, buying_date, investment_value)
 
     return portfolio, portfolio_weights, price_dict, sell_date, total_investment

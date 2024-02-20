@@ -112,20 +112,27 @@ def main():
                     investment_value_warning_placeholder.clear()
                 except:
                     pass
+                
+                with st.spinner(''):
+                    spinner_status = st.empty()
 
-                with st.spinner('Calculating recommendations...'):
+                    spinner_status.write('Calculations started...')
+                    
                     progress_bar = st.progress(0)
+
                     def progress_callback(current, total):
                         progress = int((current / total) * 100)
                         progress_bar.progress(progress)
 
-                    portfolio, portfolio_weights, price_dict, sell_date, total_investment = get_recommendations(investment_value, strategy, buying_date, progress_callback=progress_callback)
+                    portfolio, portfolio_weights, price_dict, sell_date, total_investment = get_recommendations(investment_value, strategy, buying_date, spinner_status, progress_callback=progress_callback)
 
                     pf = {}
                     for stock, shares in portfolio.items():
                         if shares > 0:
                             weight = round((shares*price_dict[stock])/total_investment,3)
                             pf[stock] = {'No. of Shares':shares, 'Buying Price': round(price_dict[stock],2), 'Recommended Weightage': round(portfolio_weights[stock],4), 'Actual Weightage': weight}
+
+                    spinner_status.write('Calculations Completed.')
 
                     st.write('Recommended Portfolio:\n', pf)
                     st.write('Rebalancing Date:', sell_date)
