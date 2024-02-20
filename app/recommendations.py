@@ -4,6 +4,22 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
 from functions import stock_selection_weight_allocation_appversion, adjust_portfolio, generate_and_save_data
 from datetime import datetime
+import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
+
+def get_pie_chart_data(pf):
+    current_dir = Path(__file__).resolve().parent
+    csv_file = current_dir.parent / 'data' / 'ind_niftytotalmarket_list.csv'
+    df = pd.read_csv(csv_file)
+    pf_industry = {}
+    for stock, weight in pf.items():
+        symbol = stock[:-3]
+        industry = df[df['Symbol']==symbol]['Industry'].iloc[0]
+        pf_industry[stock] = industry
+    
+    total_weight = sum(pf.values())
+    
+    return pf_industry
 
 def custom_round(number):
     # Separate the number into the integer and decimal parts

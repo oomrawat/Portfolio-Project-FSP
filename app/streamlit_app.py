@@ -1,6 +1,74 @@
 import streamlit as st
-from recommendations import get_recommendations
+from recommendations import get_recommendations, get_pie_chart_data
 from datetime import date, timedelta
+from PIL import Image
+import matplotlib.pyplot as plt
+import random
+from matplotlib.patches import Patch
+import plotly.graph_objs as go
+from plotly.subplots import make_subplots
+
+def show_pie_chart(pf, portfolio_weights_adjusted):
+    pf_in = get_pie_chart_data(portfolio_weights_adjusted)
+
+    pastel_colors = [
+        '#c4291c',
+        '#8b8888',
+        '#7b86c6',
+        '#5db47d',
+        '#4499df',
+        '#4599df',
+        '#397e49',
+        '#832da4',
+        '#e25d33',
+        '#d98077',
+        '#edc04c'
+    ]
+
+    # Get the unique industries and randomly select colors for them
+    unique_industries = list(set(pf_in.values()))
+    random_colors = random.sample(pastel_colors, len(unique_industries))
+    industry_to_color = dict(zip(unique_industries, random_colors))
+
+    # Create colors for the pie chart using 'pf_in'
+    pie_colors = [industry_to_color[pf_in[symbol]] for symbol in portfolio_weights_adjusted.keys()]
+
+    # Create labels for the pie chart to display symbols on the chart
+    labels = []
+
+    label1 = [symbol for symbol in portfolio_weights_adjusted.keys()]
+    label2 = [pf[symbol]['No. of Shares'] for symbol in pf.keys()]
+    for i in range(len(label1)):
+        label = f"{label1[i]} ({label2[i]})"
+        labels.append(label)
+
+    # Create the hover text for each segment
+    hover_texts = [
+        f"{symbol}<br>Shares: {pf[symbol]['No. of Shares']}<br>Industry: {pf_in[symbol]}<br>Weightage: {portfolio_weights_adjusted[symbol]*100:.2f}%"
+        for symbol in portfolio_weights_adjusted.keys()
+    ]
+
+    # Create the pie chart with custom hover text
+    fig = make_subplots(rows=1, cols=1, specs=[[{'type':'domain'}]])
+    fig.add_trace(go.Pie(labels=labels, values=list(portfolio_weights_adjusted.values()),
+                        hoverinfo='text', text=hover_texts, textinfo='label', 
+                        marker=dict(colors=pie_colors, line=dict(color='black', width=2)),
+                        outsidetextfont=dict(color='white', size=15),
+                        insidetextfont=dict(color='white', size=12)))
+
+    # Update the layout to center the legend and set the text color to white
+    fig.update_layout(
+        legend_font_color='white',
+        legend_bgcolor='rgba(0,0,0,0)',
+        legend=dict(orientation="h", y=1.05, x=0.5, xanchor='center', yanchor='bottom'),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='white', size=10),
+        margin=dict(t=1, b=0, l=0, r=0)  # Adjust margins as needed
+    )
+
+    # Display the pie chart in Streamlit
+    st.plotly_chart(fig)
 
 def main():
     st.set_page_config(page_title="Portfolio Selection and Rebalancing Project", layout="wide")
@@ -127,17 +195,34 @@ def main():
                     portfolio, portfolio_weights, price_dict, sell_date, total_investment = get_recommendations(investment_value, strategy, buying_date, spinner_status, progress_callback=progress_callback)
 
                     pf = {}
+                    portfolio_weights_adjusted = {}
                     for stock, shares in portfolio.items():
                         if shares > 0:
                             weight = round((shares*price_dict[stock])/total_investment,3)
-                            pf[stock] = {'No. of Shares':shares, 'Buying Price': round(price_dict[stock],2), 'Recommended Weightage': round(portfolio_weights[stock],4), 'Actual Weightage': weight}
+                            pf[stock] = {'No. of Shares':shares, 'Buying Price': round(price_dict[stock],2), 'Weightage': weight}
+                            portfolio_weights_adjusted[stock] = weight
 
                     spinner_status.write('Calculations Completed.')
 
-                    st.write('Recommended Portfolio:\n', pf)
-                    st.write('Rebalancing Date:', sell_date)
-                    st.write('Total Investment Value:', str(round(total_investment,2)))
-                    st.write('NOTE: Higher the investment value, more accurate is the weight allocation. Recommended amount is INR 1,00,000.')
+                    st.markdown('<h1 style="font-size: 2em;">Recommended Portfolio:\n</h1>', unsafe_allow_html=True)
+            
+                    col1, col2 = st.columns([5, 7])
+
+                    with col2:
+                        st.write('')
+                        show_pie_chart(pf, portfolio_weights_adjusted)
+
+                    with col1:
+                        for stock, stock_dict in pf.items():
+                            st.write('')
+                            no_of_shares = stock_dict['No. of Shares']
+                            cmp = stock_dict['Buying Price']
+                            st.markdown(f'<h1 style="font-size: 1.2em; font-weight: normal;">{stock}: Shares: {no_of_shares}, Current Market Price: ₹{cmp}</h1>', unsafe_allow_html=True)
+
+                        st.markdown(f'<h1 style="font-size: 1.2em; font-weight: normal;">Rebalancing Date: {sell_date}</h1>', unsafe_allow_html=True)
+                        st.markdown(f'<h1 style="font-size: 1.2em; font-weight: normal;">Total Investment Value: ₹{str(round(total_investment,2))}</h1>', unsafe_allow_html=True)
+                        st.markdown('<h1 style="font-size: 1.2em; font-weight: normal;">NOTE: Higher the investment value, more accurate is the weight allocation. Recommended amount is INR 1,00,000.</h1>', unsafe_allow_html=True)
+
 
             else:
                 investment_value_warning_placeholder.markdown("""
