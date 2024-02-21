@@ -1,10 +1,7 @@
 import streamlit as st
 from recommendations import get_recommendations, get_pie_chart_data
 from datetime import date, timedelta
-from PIL import Image
-import matplotlib.pyplot as plt
 import random
-from matplotlib.patches import Patch
 import plotly.graph_objs as go
 from plotly.subplots import make_subplots
 
