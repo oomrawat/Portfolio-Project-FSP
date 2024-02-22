@@ -153,6 +153,8 @@ def get_recommendations(investment_value, strategy, buying_date, spinner_status,
 
     progress_callback(10, progress)
 
-    portfolio, price_dict, total_investment = calculate_shares_to_buy_with_prices(portfolio_weights, all_stocks_df, buying_date, investment_value, strictly_lower=False)
+    adjusted_buy_date = all_stocks_df[all_stocks_df.index <= buying_date].index[-1]
+
+    portfolio, price_dict, total_investment = calculate_shares_to_buy_with_prices(portfolio_weights, all_stocks_df, adjusted_buy_date, investment_value, strictly_lower=False)
 
     return portfolio, portfolio_weights, price_dict, sell_date, total_investment
