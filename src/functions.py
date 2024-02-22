@@ -850,3 +850,87 @@ def adjust_portfolio(portfolio):
     adjusted_portfolio = {stock: weight / total_weight for stock, weight in filtered_portfolio.items()}
 
     return adjusted_portfolio
+
+##########################################################################
+##########################################################################
+
+def custom_round(number):
+    # Separate the number into the integer and decimal parts
+    integer_part = int(number)
+    decimal_part = number - integer_part
+    
+    # Check if the decimal part is above .75; if so, round up
+    if decimal_part > 0.8:
+        return integer_part + 1
+    else:
+        return integer_part
+    
+##########################################################################
+##########################################################################
+    
+def calculate_shares_to_buy_with_prices(portfolio_weights, prices_df, buying_date, total_investment, strictly_lower):
+
+    # Step 1: Calculate initial amount to be invested in each stock
+    initial_investment = {stock: weight * total_investment for stock, weight in portfolio_weights.items()}
+    
+    # Step 2: Determine share price for each stock on the day before buying
+    day_before_buying_date = prices_df.index[prices_df.index.get_loc(buying_date) - 1]
+    share_prices = prices_df.loc[day_before_buying_date]
+    
+    # -------- FOR STRICTLY LOWER -------- #
+
+    # Step 3: Calculate initial number of shares to buy for each stock
+    initial_shares = {stock: math.floor(initial_investment[stock]/share_prices[stock]) for stock in portfolio_weights.keys()}
+
+    # Step 4: Adjust for stocks that are too expensive
+    affordable_stocks = {stock: shares for stock, shares in initial_shares.items() if shares >= 1}
+    total_weight_of_affordable_stocks = sum([portfolio_weights[stock] for stock in affordable_stocks.keys()])
+    adjusted_weights = {stock: portfolio_weights[stock] / total_weight_of_affordable_stocks for stock in affordable_stocks.keys()}
+    adjusted_investment = {stock: adjusted_weights[stock] * total_investment for stock in affordable_stocks.keys()}
+
+    # Step 5: Recalculate the number of shares to buy for each of the remaining stocks
+    final_shares = {stock: math.floor(adjusted_investment[stock]/share_prices[stock]) for stock in affordable_stocks.keys()}
+    
+    # Collect the buying prices for the affordable stocks
+    price_dict = {stock: share_prices[stock] for stock in affordable_stocks.keys()}
+    
+    # Calculate actual investment based on final shares and their buying prices
+    actual_investment = sum([final_shares[stock] * price_dict[stock] for stock in final_shares.keys()])
+
+    # -------- FOR NOT STRICTLY LOWER -------- #
+
+    # Step 3: Calculate initial number of shares to buy for each stock
+    initial_shares2 = {stock: custom_round(initial_investment[stock]/share_prices[stock]) for stock in portfolio_weights.keys()}
+
+    # Step 4: Adjust for stocks that are too expensive
+    affordable_stocks2 = {stock: shares for stock, shares in initial_shares2.items() if shares >= 1}
+    total_weight_of_affordable_stocks2 = sum([portfolio_weights[stock] for stock in affordable_stocks2.keys()])
+    adjusted_weights2 = {stock: portfolio_weights[stock] / total_weight_of_affordable_stocks2 for stock in affordable_stocks2.keys()}
+    adjusted_investment2 = {stock: adjusted_weights2[stock] * total_investment for stock in affordable_stocks2.keys()}
+    
+    # Step 5: Recalculate the number of shares to buy for each of the remaining stocks
+    final_shares2 = {stock: custom_round(adjusted_investment2[stock]/share_prices[stock]) for stock in affordable_stocks2.keys()}
+
+    # Collect the buying prices for the affordable stocks
+    price_dict2 = {stock: share_prices[stock] for stock in affordable_stocks2.keys()}
+    
+    # Calculate actual investment based on final shares and their buying prices
+    actual_investment2 = sum([final_shares2[stock] * price_dict2[stock] for stock in final_shares2.keys()])
+
+    if not strictly_lower:
+        if actual_investment > actual_investment2:
+            return final_shares, price_dict, actual_investment
+        else:
+            return final_shares2, price_dict2, actual_investment2
+    else:
+        if actual_investment > total_investment:
+            return final_shares2, price_dict2, actual_investment2
+        
+        elif actual_investment2 > total_investment:
+            return final_shares, price_dict, actual_investment
+        
+        elif (actual_investment >= actual_investment2):
+            return final_shares, price_dict, actual_investment
+        
+        elif (actual_investment2 > actual_investment):
+            return final_shares2, price_dict2, actual_investment2

@@ -2,10 +2,11 @@ import pandas as pd
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
-from functions import stock_selection_weight_allocation_appversion, adjust_portfolio, generate_and_save_data
+from functions import stock_selection_weight_allocation_appversion, adjust_portfolio, generate_and_save_data, calculate_shares_to_buy_with_prices
 from datetime import datetime
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
+import math
 
 def get_pie_chart_data(pf):
     current_dir = Path(__file__).resolve().parent
@@ -20,91 +21,6 @@ def get_pie_chart_data(pf):
     total_weight = sum(pf.values())
     
     return pf_industry
-
-def custom_round(number):
-    # Separate the number into the integer and decimal parts
-    integer_part = int(number)
-    decimal_part = number - integer_part
-    
-    # Check if the decimal part is above .75; if so, round up
-    if decimal_part > 0.8:
-        return integer_part + 1
-    else:
-        return integer_part
-    
-def calculate_shares_to_buy_with_prices(portfolio_weights, prices_df, buying_date, total_investment):
-
-    buying_date = prices_df[prices_df.index <= buying_date].index[-1]
-
-    # Step 1: Calculate initial amount to be invested in each stock
-    initial_investment = {stock: weight * total_investment for stock, weight in portfolio_weights.items()}
-    
-    # Step 2: Determine share price for each stock on the day before buying
-    day_before_buying_date = prices_df.index[prices_df.index.get_loc(buying_date) - 1]
-    share_prices = prices_df.loc[day_before_buying_date]
-    
-    # Step 3: Calculate initial number of shares to buy for each stock
-    initial_shares = {stock: custom_round(initial_investment[stock]/share_prices[stock]) for stock in portfolio_weights.keys()}
-    
-    # Step 4: Adjust for stocks that are too expensive
-    affordable_stocks = {stock: shares for stock, shares in initial_shares.items() if shares >= 1}
-    total_weight_of_affordable_stocks = sum([portfolio_weights[stock] for stock in affordable_stocks.keys()])
-    adjusted_weights = {stock: portfolio_weights[stock] / total_weight_of_affordable_stocks for stock in affordable_stocks.keys()}
-    adjusted_investment = {stock: adjusted_weights[stock] * total_investment for stock in affordable_stocks.keys()}
-    
-    # Step 5: Recalculate the number of shares to buy for each of the remaining stocks
-    final_shares = {stock: custom_round(adjusted_investment[stock]/share_prices[stock]) for stock in affordable_stocks.keys()}
-    
-    # Collect the buying prices for the affordable stocks
-    price_dict = {stock: share_prices[stock] for stock in affordable_stocks.keys()}
-    
-    # Calculate actual investment based on final shares and their buying prices
-    actual_investment = sum([final_shares[stock] * price_dict[stock] for stock in final_shares.keys()])
-    
-    return final_shares, price_dict, actual_investment
-
-def calculate_investment(portfolio_weights, stock_prices, buying_date, amount_available):
-
-    buying_date = stock_prices[stock_prices.index <= buying_date].index[-1]
-
-    buying_prices = stock_prices.loc[pd.to_datetime(buying_date) - pd.Timedelta(days=1)]
-
-    portfolio = {}
-    price_dict = {}
-    actual_investment = 0
-
-    # Initial Allocation
-    for stock, weight in portfolio_weights.items():
-        allocated_amount = amount_available * weight
-        buying_price = buying_prices[stock]
-        price_dict[stock] = buying_price
-        num_shares = allocated_amount // buying_price
-        portfolio[stock] = num_shares
-        actual_investment += num_shares * buying_price
-
-    # Adjustment logic for underinvestment
-    if actual_investment < amount_available * 0.95:
-        sorted_weights = sorted(portfolio_weights.items(), key=lambda x: x[1], reverse=True)
-        for stock, weight in sorted_weights:
-            while actual_investment < amount_available * 1.05:
-                additional_share_cost = price_dict[stock]
-                if actual_investment + additional_share_cost > amount_available * 1.05:
-                    break
-                portfolio[stock] += 1 
-                actual_investment += additional_share_cost
-    
-    # Adjustment logic for overinvestment
-    if actual_investment > amount_available * 1.05:
-        sorted_weights = sorted(portfolio_weights.items(), key=lambda x: x[1], reverse=False)
-        for stock, weight in sorted_weights:
-                while actual_investment > amount_available * 0.95:
-                        additional_share_cost = price_dict[stock]
-                        if actual_investment - additional_share_cost < amount_available * 0.95:
-                                break
-                        portfolio[stock] -= 1
-                        actual_investment -= additional_share_cost
-    
-    return portfolio, price_dict, actual_investment
 
 def get_govt_bond_data():
 
@@ -237,6 +153,6 @@ def get_recommendations(investment_value, strategy, buying_date, spinner_status,
 
     progress_callback(10, progress)
 
-    portfolio, price_dict, total_investment = calculate_shares_to_buy_with_prices(portfolio_weights, all_stocks_df, buying_date, investment_value)
+    portfolio, price_dict, total_investment = calculate_shares_to_buy_with_prices(portfolio_weights, all_stocks_df, buying_date, investment_value, strictly_lower=False)
 
     return portfolio, portfolio_weights, price_dict, sell_date, total_investment
