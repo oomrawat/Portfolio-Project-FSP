@@ -1,5 +1,5 @@
 Stock Selection Strategy 1:
-- Generate all 3 month periods in the last 3 years before the buying date
+- Generate all 1 month periods in the last 3 years before the buying date
 - Uses simple returns
 - Holding period 1 quarter
 - filter 1 = Daily Average Returns All 3MPs > 0
@@ -9,7 +9,7 @@ Stock Selection Strategy 1:
 - Execute The Weight Allocation Strategy
 
 Stock Selection Strategy 2:
-- Generate all 3 month periods in the last 3 years before the buying date
+- Generate all 1 month periods in the last 3 years before the buying date
 - Uses log returns
 - Holding period 1 quarter
 - filter 1 = Daily Average Returns All 3MPs > 0
@@ -19,7 +19,7 @@ Stock Selection Strategy 2:
 - Execute The Weight Allocation Strategy
 
 Stock Selection Strategy 3:
-- Generate all 3 month periods in the last 3 years before the buying date
+- Generate all 1 month periods in the last 3 years before the buying date
 - Uses simple returns
 - Holding period 1 month
 - filter 1 = Daily Average Returns All 3MPs > 0
@@ -29,7 +29,7 @@ Stock Selection Strategy 3:
 - Execute The Weight Allocation Strategy
 
 Stock Selection Strategy 4:
-- Generate all 3 month periods in the last 3 years before the buying date
+- Generate all 1 month periods in the last 3 years before the buying date
 - Uses log returns
 - Holding period 1 month
 - filter 1 = Daily Average Returns All 3MPs > 0
@@ -59,7 +59,7 @@ Stock Selection Strategy 6:
 - Execute The Weight Allocation Strategy
 
 Stock Selection Strategy 7:
-- Generate all 3 month periods in the last 3 years before the buying date
+- Generate all 1 month periods in the last 3 years before the buying date
 - Uses simple returns
 - Holding period 1 month
 - filter 1 = Daily Average Returns All 3MPs > 0
@@ -69,7 +69,7 @@ Stock Selection Strategy 7:
 - Execute The Weight Allocation Strategy
 
 Stock Selection Strategy 8:
-- Generate all 3 month periods in the last 3 years before the buying date
+- Generate all 1 month periods in the last 3 years before the buying date
 - Uses log returns
 - Holding period 1 month
 - filter 1 = Daily Average Returns All 3MPs > 0
@@ -97,7 +97,7 @@ Stock Selection Strategy 10:
 - Execute The Weight Allocation Strategy
 
 Stock Selection Strategy 11:
-- Generate all 3 month periods in the last 3 years before the buying date
+- Generate all 1 month periods in the last 3 years before the buying date
 - Uses simple returns
 - Holding period 1 month
 - filter 1 = Daily Average Returns All 3MPs > 0
@@ -106,7 +106,7 @@ Stock Selection Strategy 11:
 - Execute The Weight Allocation Strategy
 
 Stock Selection Strategy 12:
-- Generate all 3 month periods in the last 3 years before the buying date
+- Generate all 1 month periods in the last 3 years before the buying date
 - Uses log returns
 - Holding period 1 month
 - filter 1 = Daily Average Returns All 3MPs > 0
@@ -131,7 +131,7 @@ Stock Selection Strategy 14:
 - Execute The Weight Allocation Strategy
 
 Stock Selection Strategy 15:
-- Generate all 3 month periods in the last 3 years before the buying date
+- Generate all 1 month periods in the last 3 years before the buying date
 - Uses simple returns
 - Holding period 1 month
 - filter 1 = Least 50 Non-Positive Last 13 3MPs (1 Year) Count
@@ -139,7 +139,7 @@ Stock Selection Strategy 15:
 - Execute The Weight Allocation Strategy
 
 Stock Selection Strategy 16:
-- Generate all 3 month periods in the last 3 years before the buying date
+- Generate all 1 month periods in the last 3 years before the buying date
 - Uses log returns
 - Holding period 1 month
 - filter 1 = Least 50 Non-Positive Last 13 3MPs (1 Year) Count
