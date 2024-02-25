@@ -874,7 +874,7 @@ def calculate_shares_to_buy_with_prices(portfolio_weights, prices_df, buying_dat
     initial_investment = {stock: weight * total_investment for stock, weight in portfolio_weights.items()}
     
     # Step 2: Determine share price for each stock on the day before buying
-    day_before_buying_date = prices_df.index[prices_df.index.get_loc(buying_date) - 1]
+    day_before_buying_date = buying_date
     share_prices = prices_df.loc[day_before_buying_date]
     
     # -------- FOR STRICTLY LOWER -------- #
