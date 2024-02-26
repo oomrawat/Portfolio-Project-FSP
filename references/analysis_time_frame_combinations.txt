@@ -1,0 +1,39 @@
+Method 1:
+Stock Selection Historical Time Frame(X): 1 year
+Weight Allocation Historical Time Frame (Y): 1 year
+
+Method 2:
+Stock Selection Historical Time Frame(X): 1 year
+Weight Allocation Historical Time Frame (Y): 2 years
+
+Method 3:
+Stock Selection Historical Time Frame(X): 2 years
+Weight Allocation Historical Time Frame (Y): 1 year
+
+Method 4:
+Stock Selection Historical Time Frame(X): 2 years
+Weight Allocation Historical Time Frame (Y): 2 years
+
+Method 5:
+Stock Selection Historical Time Frame(X): 6 months (0.5 year)
+Weight Allocation Historical Time Frame (Y): 6 months (0.5 year)
+
+Method 6:
+Stock Selection Historical Time Frame(X): 1 year
+Weight Allocation Historical Time Frame (Y): 6 months (0.5 year)
+
+Method 7:
+Stock Selection Historical Time Frame(X): 6 months (0.5 year)
+Weight Allocation Historical Time Frame (Y): 1 year
+
+Method 8:
+Stock Selection Historical Time Frame(X): 3 months (0.25 year)
+Weight Allocation Historical Time Frame (Y): 3 months (0.25 year)
+
+Method 9:
+Stock Selection Historical Time Frame(X): 6 months (0.5 year)
+Weight Allocation Historical Time Frame (Y): 3 months (0.25 year)
+
+Method 10:
+Stock Selection Historical Time Frame(X): 3 months (0.25 year)
+Weight Allocation Historical Time Frame (Y): 6 months (0.5 year)
