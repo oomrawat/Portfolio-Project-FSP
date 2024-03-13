@@ -542,7 +542,7 @@
         },
         {
             "buy_date": "2023-11-24 00:00:00",
-            "sell_date": "2024-02-23 00:00:00",
+            "sell_date": "2024-02-26 00:00:00",
             "portfolio": {
                 "BSE.NS": 0.125,
                 "SUZLON.NS": 0.125,
@@ -553,7 +553,187 @@
                 "JPASSOCIAT.NS": 0.125,
                 "ANANDRATHI.NS": 0.125
             },
-            "sell_price": 120632.08
+            "sell_price": 118786.75
+        },
+        {
+            "buy_date": "2023-11-28 00:00:00",
+            "sell_date": "2024-02-28 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "SUZLON.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "RTNPOWER.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "JPASSOCIAT.NS": 0.125,
+                "EMIL.NS": 0.125,
+                "ANANDRATHI.NS": 0.125
+            },
+            "sell_price": 115678.57
+        },
+        {
+            "buy_date": "2023-11-29 00:00:00",
+            "sell_date": "2024-02-29 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "SUZLON.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "RTNPOWER.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "EMIL.NS": 0.125,
+                "ANANDRATHI.NS": 0.125,
+                "JPASSOCIAT.NS": 0.125
+            },
+            "sell_price": 118704.83
+        },
+        {
+            "buy_date": "2023-11-30 00:00:00",
+            "sell_date": "2024-02-29 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "SUZLON.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "RTNPOWER.NS": 0.125,
+                "EMIL.NS": 0.125,
+                "TITAGARH.NS": 0.125,
+                "ANANDRATHI.NS": 0.125
+            },
+            "sell_price": 114458.94
+        },
+        {
+            "buy_date": "2023-12-01 00:00:00",
+            "sell_date": "2024-03-01 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "SUZLON.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "EMIL.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "ANANDRATHI.NS": 0.125,
+                "TITAGARH.NS": 0.125,
+                "RTNPOWER.NS": 0.125
+            },
+            "sell_price": 113934.64
+        },
+        {
+            "buy_date": "2023-12-04 00:00:00",
+            "sell_date": "2024-03-04 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "SUZLON.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "ANANDRATHI.NS": 0.125,
+                "EMIL.NS": 0.125,
+                "RTNPOWER.NS": 0.125,
+                "GMDCLTD.NS": 0.125
+            },
+            "sell_price": 111799.81
+        },
+        {
+            "buy_date": "2023-12-05 00:00:00",
+            "sell_date": "2024-03-05 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "SUZLON.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "ANANDRATHI.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "EMIL.NS": 0.125,
+                "RECLTD.NS": 0.125,
+                "GMDCLTD.NS": 0.125
+            },
+            "sell_price": 112800.53
+        },
+        {
+            "buy_date": "2023-12-06 00:00:00",
+            "sell_date": "2024-03-06 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "SUZLON.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "ANANDRATHI.NS": 0.125,
+                "RTNPOWER.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "JPASSOCIAT.NS": 0.125,
+                "RECLTD.NS": 0.125
+            },
+            "sell_price": 113272.8
+        },
+        {
+            "buy_date": "2023-12-07 00:00:00",
+            "sell_date": "2024-03-07 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "ANANDRATHI.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "GMDCLTD.NS": 0.125,
+                "RECLTD.NS": 0.125,
+                "DBREALTY.NS": 0.125,
+                "SUZLON.NS": 0.125
+            },
+            "sell_price": 117737.93
+        },
+        {
+            "buy_date": "2023-12-08 00:00:00",
+            "sell_date": "2024-03-07 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "SUZLON.NS": 0.125,
+                "ANANDRATHI.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "ITI.NS": 0.125,
+                "GMDCLTD.NS": 0.125,
+                "RECLTD.NS": 0.125
+            },
+            "sell_price": 112916.83
+        },
+        {
+            "buy_date": "2023-12-11 00:00:00",
+            "sell_date": "2024-03-07 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "ITI.NS": 0.125,
+                "GMDCLTD.NS": 0.125,
+                "ANANDRATHI.NS": 0.125,
+                "DBREALTY.NS": 0.125,
+                "RECLTD.NS": 0.125
+            },
+            "sell_price": 117384.06
+        },
+        {
+            "buy_date": "2023-12-12 00:00:00",
+            "sell_date": "2024-03-07 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "ITI.NS": 0.125,
+                "ANANDRATHI.NS": 0.125,
+                "DBREALTY.NS": 0.125,
+                "INOXWIND.NS": 0.125,
+                "RECLTD.NS": 0.125
+            },
+            "sell_price": 122264.28
+        },
+        {
+            "buy_date": "2023-12-13 00:00:00",
+            "sell_date": "2024-03-07 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.125,
+                "ITI.NS": 0.125,
+                "INOXWIND.NS": 0.125,
+                "HBLPOWER.NS": 0.125,
+                "KALYANKJIL.NS": 0.125,
+                "ANANDRATHI.NS": 0.125,
+                "JPASSOCIAT.NS": 0.125,
+                "GMDCLTD.NS": 0.125
+            },
+            "sell_price": 109930.19
         }
     ],
     "(7, 3, 10)": [
@@ -926,6 +1106,126 @@
                 "JINDALSAW.NS": 0.2079207920792079
             },
             "sell_price": 104801.36
+        },
+        {
+            "buy_date": "2023-11-28 00:00:00",
+            "sell_date": "2023-12-28 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.39603960396039606,
+                "SUZLON.NS": 0.39603960396039606,
+                "GABRIEL.NS": 0.2079207920792079
+            },
+            "sell_price": 96576.72
+        },
+        {
+            "buy_date": "2023-11-29 00:00:00",
+            "sell_date": "2023-12-29 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.39603960396039606,
+                "SUZLON.NS": 0.39603960396039606,
+                "THOMASCOOK.NS": 0.2079207920792079
+            },
+            "sell_price": 92272.66
+        },
+        {
+            "buy_date": "2023-11-30 00:00:00",
+            "sell_date": "2024-01-01 00:00:00",
+            "portfolio": {
+                "HBLPOWER.NS": 0.39603960396039606,
+                "BSE.NS": 0.39603960396039606,
+                "THOMASCOOK.NS": 0.2079207920792079
+            },
+            "sell_price": 102309.18
+        },
+        {
+            "buy_date": "2023-12-01 00:00:00",
+            "sell_date": "2024-01-01 00:00:00",
+            "portfolio": {
+                "SUZLON.NS": 0.39603960396039606,
+                "BSE.NS": 0.39603960396039606,
+                "ELECTCAST.NS": 0.2079207920792079
+            },
+            "sell_price": 94244.37
+        },
+        {
+            "buy_date": "2023-12-04 00:00:00",
+            "sell_date": "2024-01-04 00:00:00",
+            "portfolio": {
+                "RECLTD.NS": 0.39603960396039606,
+                "SUZLON.NS": 0.39603960396039606,
+                "FACT.NS": 0.2079207920792079
+            },
+            "sell_price": 105302.87
+        },
+        {
+            "buy_date": "2023-12-05 00:00:00",
+            "sell_date": "2024-01-05 00:00:00",
+            "portfolio": {
+                "SUZLON.NS": 0.39603960396039606,
+                "BSE.NS": 0.39603960396039606,
+                "RECLTD.NS": 0.2079207920792079
+            },
+            "sell_price": 100913.2
+        },
+        {
+            "buy_date": "2023-12-06 00:00:00",
+            "sell_date": "2024-01-08 00:00:00",
+            "portfolio": {
+                "SUZLON.NS": 0.39603960396039606,
+                "BSE.NS": 0.39603960396039606,
+                "HBLPOWER.NS": 0.2079207920792079
+            },
+            "sell_price": 103300.15
+        },
+        {
+            "buy_date": "2023-12-07 00:00:00",
+            "sell_date": "2024-01-08 00:00:00",
+            "portfolio": {
+                "BSE.NS": 0.39603960396039606,
+                "SUZLON.NS": 0.39603960396039606,
+                "HBLPOWER.NS": 0.2079207920792079
+            },
+            "sell_price": 103275.03
+        },
+        {
+            "buy_date": "2023-12-08 00:00:00",
+            "sell_date": "2024-01-08 00:00:00",
+            "portfolio": {
+                "HBLPOWER.NS": 0.39603960396039606,
+                "BSE.NS": 0.39603960396039606,
+                "SUZLON.NS": 0.2079207920792079
+            },
+            "sell_price": 103246.18
+        },
+        {
+            "buy_date": "2023-12-11 00:00:00",
+            "sell_date": "2024-01-11 00:00:00",
+            "portfolio": {
+                "HBLPOWER.NS": 0.39603960396039606,
+                "BSE.NS": 0.39603960396039606,
+                "SUZLON.NS": 0.2079207920792079
+            },
+            "sell_price": 105296.13
+        },
+        {
+            "buy_date": "2023-12-12 00:00:00",
+            "sell_date": "2024-01-12 00:00:00",
+            "portfolio": {
+                "RECLTD.NS": 0.39603960396039606,
+                "HBLPOWER.NS": 0.39603960396039606,
+                "SJVN.NS": 0.2079207920792079
+            },
+            "sell_price": 105773.23
+        },
+        {
+            "buy_date": "2023-12-13 00:00:00",
+            "sell_date": "2024-01-15 00:00:00",
+            "portfolio": {
+                "ELECON.NS": 0.39603960396039606,
+                "SOLARINDS.NS": 0.39603960396039606,
+                "VBL.NS": 0.2079207920792079
+            },
+            "sell_price": 113462.0
         }
     ],
     "(9, 7, 5)": [
@@ -1483,6 +1783,186 @@
                 "LXCHEM.NS": 0.125
             },
             "sell_price": 106845.83
+        },
+        {
+            "buy_date": "2023-11-28 00:00:00",
+            "sell_date": "2024-02-28 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "MASFIN.NS": 0.125,
+                "LUPIN.NS": 0.125,
+                "LEMONTREE.NS": 0.125,
+                "LATENTVIEW.NS": 0.125,
+                "LT.NS": 0.125,
+                "LTIM.NS": 0.125,
+                "LICHSGFIN.NS": 0.125
+            },
+            "sell_price": 110084.93
+        },
+        {
+            "buy_date": "2023-11-29 00:00:00",
+            "sell_date": "2024-02-29 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "MOIL.NS": 0.125,
+                "MASFIN.NS": 0.125,
+                "LUPIN.NS": 0.125,
+                "LEMONTREE.NS": 0.125,
+                "LATENTVIEW.NS": 0.125,
+                "LT.NS": 0.125,
+                "LTIM.NS": 0.125
+            },
+            "sell_price": 103581.44
+        },
+        {
+            "buy_date": "2023-11-30 00:00:00",
+            "sell_date": "2024-02-29 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "LATENTVIEW.NS": 0.125,
+                "LT.NS": 0.125,
+                "LTIM.NS": 0.125,
+                "LICHSGFIN.NS": 0.125,
+                "LTTS.NS": 0.125,
+                "KOLTEPATIL.NS": 0.125,
+                "KIRLOSENG.NS": 0.125
+            },
+            "sell_price": 115137.13
+        },
+        {
+            "buy_date": "2023-12-01 00:00:00",
+            "sell_date": "2024-03-01 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "LATENTVIEW.NS": 0.125,
+                "LT.NS": 0.125,
+                "LTIM.NS": 0.125,
+                "LICHSGFIN.NS": 0.125,
+                "LTTS.NS": 0.125,
+                "KOLTEPATIL.NS": 0.125,
+                "KIRLOSENG.NS": 0.125
+            },
+            "sell_price": 116276.61
+        },
+        {
+            "buy_date": "2023-12-04 00:00:00",
+            "sell_date": "2024-03-04 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "LEMONTREE.NS": 0.125,
+                "LATENTVIEW.NS": 0.125,
+                "LT.NS": 0.125,
+                "LICHSGFIN.NS": 0.125,
+                "LTTS.NS": 0.125,
+                "KOLTEPATIL.NS": 0.125,
+                "KIRLOSENG.NS": 0.125
+            },
+            "sell_price": 118106.43
+        },
+        {
+            "buy_date": "2023-12-05 00:00:00",
+            "sell_date": "2024-03-05 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "LICHSGFIN.NS": 0.125,
+                "LTTS.NS": 0.125,
+                "L&TFH.NS": 0.125,
+                "KOLTEPATIL.NS": 0.125,
+                "KIRLOSENG.NS": 0.125,
+                "KIRLOSBROS.NS": 0.125,
+                "KFINTECH.NS": 0.125
+            },
+            "sell_price": 119535.84
+        },
+        {
+            "buy_date": "2023-12-06 00:00:00",
+            "sell_date": "2024-03-06 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "LEMONTREE.NS": 0.125,
+                "LATENTVIEW.NS": 0.125,
+                "LT.NS": 0.125,
+                "LTIM.NS": 0.125,
+                "LICHSGFIN.NS": 0.125,
+                "LTTS.NS": 0.125,
+                "L&TFH.NS": 0.125
+            },
+            "sell_price": 108261.86
+        },
+        {
+            "buy_date": "2023-12-07 00:00:00",
+            "sell_date": "2024-03-07 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "L&TFH.NS": 0.125,
+                "KOLTEPATIL.NS": 0.125,
+                "KIRLOSENG.NS": 0.125,
+                "KFINTECH.NS": 0.125,
+                "KKCL.NS": 0.125,
+                "KAYNES.NS": 0.125,
+                "KSCL.NS": 0.125
+            },
+            "sell_price": 113414.64
+        },
+        {
+            "buy_date": "2023-12-08 00:00:00",
+            "sell_date": "2024-03-07 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "LICHSGFIN.NS": 0.125,
+                "LTTS.NS": 0.125,
+                "L&TFH.NS": 0.125,
+                "KOLTEPATIL.NS": 0.125,
+                "KIRLOSENG.NS": 0.125,
+                "KFINTECH.NS": 0.125,
+                "KKCL.NS": 0.125
+            },
+            "sell_price": 111774.79
+        },
+        {
+            "buy_date": "2023-12-11 00:00:00",
+            "sell_date": "2024-03-07 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "LT.NS": 0.125,
+                "LTIM.NS": 0.125,
+                "LICHSGFIN.NS": 0.125,
+                "LTTS.NS": 0.125,
+                "L&TFH.NS": 0.125,
+                "KOLTEPATIL.NS": 0.125,
+                "KIRLOSENG.NS": 0.125
+            },
+            "sell_price": 108000.1
+        },
+        {
+            "buy_date": "2023-12-12 00:00:00",
+            "sell_date": "2024-03-07 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "MOIL.NS": 0.125,
+                "LUPIN.NS": 0.125,
+                "LEMONTREE.NS": 0.125,
+                "LATENTVIEW.NS": 0.125,
+                "LT.NS": 0.125,
+                "LTIM.NS": 0.125,
+                "LICHSGFIN.NS": 0.125
+            },
+            "sell_price": 110649.37
+        },
+        {
+            "buy_date": "2023-12-13 00:00:00",
+            "sell_date": "2024-03-07 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "MAHSEAMLES.NS": 0.125,
+                "MGL.NS": 0.125,
+                "LODHA.NS": 0.125,
+                "MRF.NS": 0.125,
+                "MOIL.NS": 0.125,
+                "LUPIN.NS": 0.125,
+                "LEMONTREE.NS": 0.125
+            },
+            "sell_price": 113533.33
         }
     ]
 }
