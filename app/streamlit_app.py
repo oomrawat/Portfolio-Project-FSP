@@ -68,11 +68,12 @@ def show_pie_chart(pf, portfolio_weights_adjusted):
     st.plotly_chart(fig)
 
 def main():
-    st.set_page_config(page_title="Portfolio Selection and Rebalancing Project", layout="wide")
+    st.set_page_config(page_title="Strategic Wealth Management", layout="wide")
 
-    st.title("Portfolio Selection and Rebalancing Project")
-    st.markdown("""
-    **Disclaimer**: This application is part of a student project. It uses simulated data for investment recommendations. For actual investment decisions, please consult a financial advisor.
+    st.title("Strategic Wealth Management: \n  ## A Quantitative Approach to Portfolio Selection and Time-Based Rebalancing")
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("""   
+    **Disclaimer**: This application is part of a graduation project, and not meant to give investment ideas. For actual investment decisions, please consult a financial advisor.
     """)
 
     tab1, tab2, tab3 = st.tabs(["Project Description", "Analysis and Backtesting Results", "Get Recommendations"])
@@ -80,15 +81,72 @@ def main():
     with tab1:
         st.header("Project Description")
         st.markdown("""
-        **Objective**: 
+        <br>
+
+        #### **Motivation**:
+        
+        Modern investors want more than simply financial rewards; they also want empowerment, ownership, and the capacity to make data-driven decisions. In the exponentially growing Indian financial market, there are many investment options, which can be overwhelming for individual investors.
                     
-        **Features**:
+        This project intends to help simplify investing for them with a structured approach. I am also motivated by the idea that historical data can greatly assist investment decisions. This project will use strategies that consider various statistical factors to make investment choices more organized. The goal is to provide individuals with the tools they need to make informed decisions in the dynamic Indian financial markets.  
 
-        **Implementation Steps**:
+        <br>            
+        
+        #### **Problem Statement**:
+                    
+        To create a novel approach to portfolio selection and time-based rebalancing to outperform market benchmark indices.  
 
-        **Outcome**:
+        <br>        
 
-        """)
+        #### **Objectives**:
+            
+        -   Develop a historical data-driven investment strategy that focuses on analysing market indices and identifying a good combination of assets within those indices.
+            
+        -   Create a user-friendly app/interface that allows individual investors to choose their portfolios based on the strategy’s recommendations.
+                    
+        -   Evaluate the performance of the strategy through backtesting and historical data analysis, providing investors with insights into potential portfolio performance.  
+
+        <br>       
+                    
+        #### **Understanding Our Investment Strategies**:
+        
+        Our web application employs a cutting-edge, data-driven approach for portfolio management in the dynamic Indian financial market, summarized as follows:
+        
+        -   Historical Data Analysis: We analyze past market data to identify patterns and assets that have historically outperformed, using this insight to inform future investment decisions.
+
+        -   Stock Selection: Through statistical filters, we select stocks that demonstrate potential for growth and stability, tailoring selections to match individual risk appetites and investment goals.
+
+        -   Weight Allocation: Utilizing both traditional and advanced methods, we optimize how your investment is spread across selected assets to balance risk and potential returns, based on Markowitz Portfolio Theory and beyond.
+
+        -   Time-Based Rebalancing: Our strategies include regular portfolio adjustments to align with market changes and personal investment objectives, ensuring your investments stay on target.  
+
+        <br>     
+                    
+        #### **User Journey**:
+                    
+        -   Read about the project.
+            
+        -   Go through the results and analysis of the strategies.
+                    
+        -   Read the project report if you want to delve deeper into the methodolody and analysis of the project.
+            
+        -   Choose one of the top 3 strategies according to your risk-appetite.
+
+        -   Choose a date, set an amount, and check the app's recommendations for you.  
+                    
+        <br>
+                    
+        #### **Risk Disclosure**:
+        
+        Investments involve risks including the possible loss of principal. Historical performance is not indicative of future results. Users should consider their financial situation, objectives, and risk tolerance before investing. The content provided here is for informational purposes only and should not be construed as financial advice.  
+
+        <br>        
+                    
+        #### **Contact Information**:
+                    
+        Oom Rawat  
+        E-mail: oom.rawat@flame.edu.in or oomrawat@gmail.com  
+        Mobile: +91 96388 82712
+        """, unsafe_allow_html=True)
 
     with tab2:
         st.header("Analysis and Backtesting Results")
@@ -104,7 +162,7 @@ def main():
         with col1:
             strategy = st.selectbox(
                 "Select Strategy",
-                ['Strategy 1', 'Strategy 2', 'Strategy 3', 'Strategy 4'],
+                ['Strategy 1', 'Strategy 2', 'Strategy 3'],
                 key='strategy_selectbox',
                 help='Learn about strategies in the "Analysis and Backtesting Results" section before selecting.')
         

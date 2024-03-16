@@ -1,10 +1,10 @@
-Weight Allocation Strategy 1:
+Weight Allocation Method 1:
 - Equally weight all stocks
 
 * the data analysis of all of the weight allocation strategies from 2 to 7 would be based on last 1 year's data from the buying date if the holding period is 1 quarter
 * another alternative is to use 2 year's data
 
-Weight Allocation Strategy 2:
+Weight Allocation Method 2:
 - If stocks are more than 8:
     - Maximized Return Optimization (no stock more than 25% weightage and max annual standard deviation as 40%)
     - Pick the 8 with heighest weightages
@@ -12,7 +12,7 @@ Weight Allocation Strategy 2:
 - Else:
     - Maximized Return Optimization (no stock more than 25% weightage and max annual standard deviation as 40%)
 
-Weight Allocation Strategy 3:
+Weight Allocation Method 3:
 - If stocks are more than 8:
     - Maximized Return Optimization (no stock more than 40% weightage and max annual standard deviation as 40%)
     - Pick the 8 with heighest weightages
@@ -20,7 +20,7 @@ Weight Allocation Strategy 3:
 - Else:
     - Maximized Return Optimization (no stock more than 40% weightage and max annual standard deviation as 40%)
 
-Weight Allocation Strategy 4:
+Weight Allocation Method 4:
 - If stocks are more than 8:
     - Maximized Sharpe Ratio Optimization (no stock more than 25% weightage)
     - Pick the 8 with heighest weightages
@@ -28,7 +28,7 @@ Weight Allocation Strategy 4:
 - Else:
     - Maximized Sharpe Ratio Optimization (no stock more than 25% weightage)
 
-Weight Allocation Strategy 5:
+Weight Allocation Method 5:
 - If stocks are more than 8:
     - Maximized Sharpe Ratio Optimization (no stock more than 40% weightage)
     - Pick the 8 with heighest weightages
@@ -36,7 +36,7 @@ Weight Allocation Strategy 5:
 - Else:
     - Maximized Sharpe Ratio Optimization (no stock more than 40% weightage)
 
-Weight Allocation Strategy 6:
+Weight Allocation Method 6:
 - If stocks are more than 8:
     - Minimized Variance (no stock more than 25% weightage and min annual returns as 30%)
     - Pick the 8 with heighest weightages
@@ -44,7 +44,7 @@ Weight Allocation Strategy 6:
 - Else:
     - Minimized Variance (no stock more than 25% weightage and min annual returns as 30%)
 
-Weight Allocation Strategy 7:
+Weight Allocation Method 7:
 - If stocks are more than 8:
     - Minimized Variance (no stock more than 40% weightage and min annual returns as 30%)
     - Pick the 8 with heighest weightages
@@ -52,26 +52,26 @@ Weight Allocation Strategy 7:
 - Else:
     - Minimized Variance (no stock more than 40% weightage and min annual returns as 30%)
 
-Weight Allocation Strategy 8:
+Weight Allocation Method 8:
 - Minimized Variance (no stock more than 25% weightage and min annual returns as 20%)
 - Maximized Returns (no stock more than 25% weightage and max annual standard deviation as 20%)
 - Pick the top 4 from both according to weightage and if common stocks are found take more to have minimum 8
 - Maximized Sharpe Ratio (no stock more than 25% weightage)
 
-Weight Allocation Strategy 9:
+Weight Allocation Method 9:
 - Minimized Variance (no stock more than 40% weightage and min annual returns as 20%)
 - Maximized Returns (no stock more than 40% weightage and max annual standard deviation as 20%)
 - Pick the top 4 from both according to weightage and if common stocks are found take more to have minimum 8
 - Maximized Sharpe Ratio (no stock more than 40% weightage)
 
-Weight Allocation Strategy 10:
+Weight Allocation Method 10:
 - Maximized Sharpe Ratio Optimization (no stock more than 40% weightage)
 - Maximized Returns Optimization (no stock more than 40% weightage, max annual standard deviation as 30%)
 - Minimized Variance Optimization (no stock more than 40% weightage, min annual return as 30%)
 - Pick all the stocks that have a minimum weightage of 10% in all of the above
 - Maximized Returns Optimization (no stock more than 20% weightage, max annual standard deviation as 30%)
 
-Weight Allocation Strategy 11:
+Weight Allocation Method 11:
 - Maximized Sharpe Ratio Optimization (no stock more than 25% weightage)
 - Maximized Returns Optimization (no stock more than 25% weightage, max annual standard deviation as 30%)
 - Minimized Variance Optimization (no stock more than 25% weightage, min annual return as 30%)
