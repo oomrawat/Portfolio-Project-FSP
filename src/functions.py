@@ -221,6 +221,22 @@ def get_closest_valid_date(date_str):
 # Function 5: Stock selection for 3 month holding period strategies
 
 def one_quarter_stock_selection(buying_date, holding_period, returns_type, max_non_positive_returns_count, all_stocks_df, filters, last_x_years):
+    '''
+    This function selects stocks for investment based on their performance over various three-month periods in the last three years leading up to the buying date. It filters stocks according to predefined criteria including the type of returns (simple or logarithmic), the maximum allowable count of non-positive returns, and additional filters specific to the strategy being used. The function calculates returns for each stock over each three-month period, applies the filters, and selects the stocks that meet the criteria for inclusion in the portfolio.
+
+    Args:
+        buying_date (string): The intended date of purchase, formatted as "yyyy-mm-dd".
+        holding_period (string): The intended holding period for the investment, either '1q' for one quarter or '1m' for one month.
+        returns_type (string): The type of returns to consider, 'SR' for simple returns or 'LR' for logarithmic returns.
+        max_non_positive_returns_count (int): The maximum number of non-positive returns allowed for a stock to be considered for selection.
+        all_stocks_df (pandas.DataFrame): DataFrame containing historical stock prices.
+        filters (int): The number of filters to apply for stock selection.
+        last_x_years (float): The number of years to look back for selecting stocks.
+
+    Returns:
+        selected_stocks (list): A list of selected stock symbols that meet the criteria.
+        selling_date (string): The calculated selling date based on the holding period.
+    '''
 
     three_month_periods, selling_date = generate_three_month_periods(buying_date, holding_period)
 
@@ -408,7 +424,22 @@ def one_quarter_stock_selection(buying_date, holding_period, returns_type, max_n
 # Function 6: Stock selection for 1 month holding period strategies
 
 def one_month_stock_selection(buying_date, holding_period, returns_type, max_non_positive_returns_count, all_stocks_df, filters, last_x_years):
+    '''
+    This function selects stocks for investment based on their performance over various one-month periods in the last three years leading up to the buying date. Similar to the three-month selection strategy, it utilizes either simple or logarithmic returns to evaluate stock performance, applying filters to identify stocks that have demonstrated favorable returns under specified conditions. The function aims to construct a portfolio that aligns with the investor's risk tolerance and investment objectives by meticulously analyzing stock performance in one-month increments.
 
+    Args:
+        buying_date (string): The intended date of purchase, formatted as "yyyy-mm-dd".
+        holding_period (string): The intended holding period for the investment, either '1q' for one quarter or '1m' for one month.
+        returns_type (string): The type of returns to consider, 'SR' for simple returns or 'LR' for logarithmic returns.
+        max_non_positive_returns_count (int): The maximum number of non-positive returns allowed for a stock to be considered for selection.
+        all_stocks_df (pandas.DataFrame): DataFrame containing historical stock prices.
+        filters (int): The number of filters to apply for stock selection.
+        last_x_years (float): The number of years to look back for selecting stocks.
+
+    Returns:
+        selected_stocks (list): A list of selected stock symbols that meet the criteria.
+        selling_date (string): The calculated selling date based on the holding period.
+    '''
     one_month_periods, selling_date = generate_one_month_periods(buying_date, holding_period)
 
     if max_non_positive_returns_count != None:
@@ -471,6 +502,10 @@ def one_month_stock_selection(buying_date, holding_period, returns_type, max_non
             month = str(int(month)-6)
         if len(month) == 1:
                 month = '0'+month
+
+        if int(day) == 31:
+            if int(month) in [2,4,6,9,11]:
+                day = '30'
         buying_date_minus_1_year = year+'-'+month+'-'+day
     
     elif last_x_years == 0.25:
@@ -484,6 +519,10 @@ def one_month_stock_selection(buying_date, holding_period, returns_type, max_non
             month = str(int(month)-3)
         if len(month) == 1:
                 month = '0'+month
+
+        if int(day) == 31:
+            if int(month) in [2,4,6,9,11]:
+                day = '30'
         buying_date_minus_1_year = year+'-'+month+'-'+day
 
     last_1_year_stock_df = all_stocks_df[(all_stocks_df.index >= buying_date_minus_1_year) & (all_stocks_df.index < buying_date)]
@@ -608,9 +647,9 @@ def stock_selection_weight_allocation(buying_date, holding_period, returns_type,
     
         weight_allocation_strategy (integer): it can be anything from the 7 weight allocation strategies thought of so far (s1, s2, s3, s4, s5, s6, or s7)
 
-        all_stocks_df (pandas dataframe): it is the pandas dataframe of all the historical stock prices for the dates used while generating the dataframe
+        all_stocks_df (pandas.DataFrame): it is the pandas.DataFrame of all the historical stock prices for the dates used while generating the dataframe
 
-        govt_bond_df (pandas dataframe): it is the pandas dataframe of government bond data that will be use further in some of the weight allocation strategies
+        govt_bond_df (pandas.DataFrame): it is the pandas.DataFrame of government bond data that will be use further in some of the weight allocation strategies
 
         filters (integer): it is the number of filters to be applied and for now it can either be 3 or 4
 
@@ -681,9 +720,9 @@ def stock_selection_weight_allocation_appversion(buying_date, holding_period, re
     
         weight_allocation_strategy (integer): it can be anything from the 7 weight allocation strategies thought of so far (s1, s2, s3, s4, s5, s6, or s7)
 
-        all_stocks_df (pandas dataframe): it is the pandas dataframe of all the historical stock prices for the dates used while generating the dataframe
+        all_stocks_df (pandas.DataFrame): it is the pandas.DataFrame of all the historical stock prices for the dates used while generating the dataframe
 
-        govt_bond_df (pandas dataframe): it is the pandas dataframe of government bond data that will be use further in some of the weight allocation strategies
+        govt_bond_df (pandas.DataFrame): it is the pandas.DataFrame of government bond data that will be use further in some of the weight allocation strategies
 
         filters (integer): it is the number of filters to be applied and for now it can either be 3 or 4
 
@@ -773,9 +812,9 @@ def prep_call_weight_allocation_strategy(returns_type, buying_date_minus_x_year,
     
         strategy_number (integer): strategy number for the weight allocation strategy
     
-        all_stocks_df (pandas dataframe): it is the pandas dataframe of all the historical stock prices for the dates used while generating the dataframe
+        all_stocks_df (pandas.DataFrame): it is the pandas.DataFrame of all the historical stock prices for the dates used while generating the dataframe
 
-        govt_bond_df (pandas dataframe): it is the pandas dataframe of government bond data that will be use further in some of the weight allocation strategies
+        govt_bond_df (pandas.DataFrame): it is the pandas.DataFrame of government bond data that will be use further in some of the weight allocation strategies
     
     Returns:
 
@@ -854,7 +893,19 @@ def adjust_portfolio(portfolio):
 ##########################################################################
 ##########################################################################
 
+# Function 10: Function to customize the rounding of weights for better position sizing
+
 def custom_round(number):
+    '''
+    Custom rounding function designed to round numbers in a way that is more suited for financial applications, particularly for position sizing in portfolio management. It rounds numbers to the nearest whole number, but with a bias towards rounding up only if the decimal part is greater than 0.8. This approach can help in ensuring that the portfolio does not get overweight in certain assets due to aggressive rounding.
+
+    Args:
+        number (float): The number to be rounded.
+
+    Returns:
+        integer_part (int): The rounded number, following the custom logic for rounding.
+    '''
+
     # Separate the number into the integer and decimal parts
     integer_part = int(number)
     decimal_part = number - integer_part
@@ -867,8 +918,23 @@ def custom_round(number):
     
 ##########################################################################
 ##########################################################################
-    
+
+# Function 11: Function for position sizing the portfolio
+
 def calculate_shares_to_buy_with_prices(portfolio_weights, prices_df, buying_date, total_investment, strictly_lower):
+    '''
+    Calculates the number of shares to buy for each stock in a portfolio based on their weights, the current share prices, and the total investment amount. It adjusts for affordability by ensuring that the total investment does not exceed the specified amount and that stock weights are recalculated to maintain the portfolio's overall strategy. The function can operate under two modes: strictly lower, where the total investment after adjustment is strictly lower than the initial investment, and not strictly lower, which allows for flexibility in investment allocation.
+
+    Args:
+        portfolio_weights (dict): A dictionary with stock symbols as keys and their weights as values.
+        prices_df (pandas.DataFrame): DataFrame containing the share prices of stocks.
+        buying_date (string): The date on which the portfolio is to be bought, formatted as 'yyyy-mm-dd'.
+        total_investment (float): The total amount of money available for investment.
+        strictly_lower (bool): A flag indicating whether the total investment after adjustment should be strictly lower than the initial amount.
+
+    Returns:
+        final_shares, price_dict, actual_investment (tuple): A tuple containing the final shares to buy for each stock (dict), the prices at which to buy them (dict), and the actual total investment (float).
+    '''
 
     # Step 1: Calculate initial amount to be invested in each stock
     initial_investment = {stock: weight * total_investment for stock, weight in portfolio_weights.items()}

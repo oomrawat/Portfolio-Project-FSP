@@ -677,7 +677,7 @@
         },
         {
             "buy_date": "2023-12-08 00:00:00",
-            "sell_date": "2024-03-07 00:00:00",
+            "sell_date": "2024-03-11 00:00:00",
             "portfolio": {
                 "BSE.NS": 0.125,
                 "HBLPOWER.NS": 0.125,
@@ -688,11 +688,11 @@
                 "GMDCLTD.NS": 0.125,
                 "RECLTD.NS": 0.125
             },
-            "sell_price": 112916.83
+            "sell_price": 110462.4
         },
         {
             "buy_date": "2023-12-11 00:00:00",
-            "sell_date": "2024-03-07 00:00:00",
+            "sell_date": "2024-03-11 00:00:00",
             "portfolio": {
                 "BSE.NS": 0.125,
                 "KALYANKJIL.NS": 0.125,
@@ -703,11 +703,11 @@
                 "DBREALTY.NS": 0.125,
                 "RECLTD.NS": 0.125
             },
-            "sell_price": 117384.06
+            "sell_price": 114394.63
         },
         {
             "buy_date": "2023-12-12 00:00:00",
-            "sell_date": "2024-03-07 00:00:00",
+            "sell_date": "2024-03-12 00:00:00",
             "portfolio": {
                 "BSE.NS": 0.125,
                 "KALYANKJIL.NS": 0.125,
@@ -718,11 +718,11 @@
                 "INOXWIND.NS": 0.125,
                 "RECLTD.NS": 0.125
             },
-            "sell_price": 122264.28
+            "sell_price": 115731.78
         },
         {
             "buy_date": "2023-12-13 00:00:00",
-            "sell_date": "2024-03-07 00:00:00",
+            "sell_date": "2024-03-13 00:00:00",
             "portfolio": {
                 "BSE.NS": 0.125,
                 "ITI.NS": 0.125,
@@ -733,7 +733,7 @@
                 "JPASSOCIAT.NS": 0.125,
                 "GMDCLTD.NS": 0.125
             },
-            "sell_price": 109930.19
+            "sell_price": 98513.78
         }
     ],
     "(7, 3, 10)": [
@@ -1226,6 +1226,76 @@
                 "VBL.NS": 0.2079207920792079
             },
             "sell_price": 113462.0
+        },
+        {
+            "buy_date": "2023-12-14 00:00:00",
+            "sell_date": "2024-01-15 00:00:00",
+            "portfolio": {
+                "ELECON.NS": 0.39603960396039606,
+                "KPITTECH.NS": 0.2079207920792079,
+                "SONATSOFTW.NS": 0.39603960396039606
+            },
+            "sell_price": 106550.62
+        },
+        {
+            "buy_date": "2023-12-15 00:00:00",
+            "sell_date": "2024-01-15 00:00:00",
+            "portfolio": {
+                "KPITTECH.NS": 0.39603960396039606,
+                "SHAREINDIA.NS": 0.2079207920792079,
+                "SOLARINDS.NS": 0.39603960396039606
+            },
+            "sell_price": 102030.98
+        },
+        {
+            "buy_date": "2023-12-18 00:00:00",
+            "sell_date": "2024-01-18 00:00:00",
+            "portfolio": {
+                "HBLPOWER.NS": 0.39603960396039606,
+                "NEWGEN.NS": 0.39603960396039606,
+                "GABRIEL.NS": 0.2079207920792079
+            },
+            "sell_price": 105930.27
+        },
+        {
+            "buy_date": "2023-12-19 00:00:00",
+            "sell_date": "2024-01-19 00:00:00",
+            "portfolio": {
+                "ANANTRAJ.NS": 0.39603960396039606,
+                "ELECON.NS": 0.2079207920792079,
+                "TRENT.NS": 0.39603960396039606
+            },
+            "sell_price": 108624.59
+        },
+        {
+            "buy_date": "2023-12-20 00:00:00",
+            "sell_date": "2024-01-23 00:00:00",
+            "portfolio": {
+                "HBLPOWER.NS": 0.39603960396039606,
+                "INOXWIND.NS": 0.39603960396039606,
+                "JYOTHYLAB.NS": 0.2079207920792079
+            },
+            "sell_price": 107669.51
+        },
+        {
+            "buy_date": "2023-12-21 00:00:00",
+            "sell_date": "2024-01-23 00:00:00",
+            "portfolio": {
+                "HBLPOWER.NS": 0.39603960396039606,
+                "INOXWIND.NS": 0.39603960396039606,
+                "JYOTHYLAB.NS": 0.2079207920792079
+            },
+            "sell_price": 102018.92
+        },
+        {
+            "buy_date": "2023-12-22 00:00:00",
+            "sell_date": "2024-01-23 00:00:00",
+            "portfolio": {
+                "ELECON.NS": 0.39603960396039606,
+                "RECLTD.NS": 0.39603960396039606,
+                "SONATSOFTW.NS": 0.2079207920792079
+            },
+            "sell_price": 107643.1
         }
     ],
     "(9, 7, 5)": [
@@ -1234,45 +1304,45 @@
             "sell_date": "2024-01-03 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
+                "MFSL.NS": 0.125,
                 "MAYURUNIQ.NS": 0.125,
                 "MAZDOCK.NS": 0.125,
                 "METROBRAND.NS": 0.125,
                 "MINDACORP.NS": 0.125,
                 "MIDHANI.NS": 0.125,
-                "MSUMI.NS": 0.125,
-                "MFSL.NS": 0.125
+                "MASTEK.NS": 0.125
             },
-            "sell_price": 107862.62
+            "sell_price": 109678.91
         },
         {
             "buy_date": "2023-10-04 00:00:00",
             "sell_date": "2024-01-04 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
+                "MFSL.NS": 0.125,
                 "MAYURUNIQ.NS": 0.125,
                 "MAZDOCK.NS": 0.125,
                 "METROBRAND.NS": 0.125,
                 "MINDACORP.NS": 0.125,
                 "MIDHANI.NS": 0.125,
-                "MSUMI.NS": 0.125,
-                "MFSL.NS": 0.125
+                "MASTEK.NS": 0.125
             },
-            "sell_price": 109097.22
+            "sell_price": 110735.03
         },
         {
             "buy_date": "2023-10-05 00:00:00",
             "sell_date": "2024-01-05 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
+                "MFSL.NS": 0.125,
                 "MAYURUNIQ.NS": 0.125,
                 "MAZDOCK.NS": 0.125,
                 "METROBRAND.NS": 0.125,
                 "MINDACORP.NS": 0.125,
                 "MIDHANI.NS": 0.125,
-                "MSUMI.NS": 0.125,
-                "MFSL.NS": 0.125
+                "MASTEK.NS": 0.125
             },
-            "sell_price": 109172.07
+            "sell_price": 110218.81
         },
         {
             "buy_date": "2023-10-06 00:00:00",
@@ -1309,15 +1379,15 @@
             "sell_date": "2024-01-10 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
+                "MARUTI.NS": 0.125,
                 "MASTEK.NS": 0.125,
                 "MFSL.NS": 0.125,
                 "MAYURUNIQ.NS": 0.125,
                 "MAZDOCK.NS": 0.125,
                 "METROBRAND.NS": 0.125,
-                "METROPOLIS.NS": 0.125,
-                "MARUTI.NS": 0.125
+                "MARKSANS.NS": 0.125
             },
-            "sell_price": 108775.02
+            "sell_price": 114160.13
         },
         {
             "buy_date": "2023-10-11 00:00:00",
@@ -1339,49 +1409,19 @@
             "sell_date": "2024-01-12 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
-                "MCX.NS": 0.125,
                 "BECTORFOOD.NS": 0.125,
-                "MPHASIS.NS": 0.125,
-                "MOTILALOFS.NS": 0.125,
-                "MSUMI.NS": 0.125,
-                "MIDHANI.NS": 0.125,
-                "MINDACORP.NS": 0.125
-            },
-            "sell_price": 118626.04
-        },
-        {
-            "buy_date": "2023-10-13 00:00:00",
-            "sell_date": "2024-01-15 00:00:00",
-            "portfolio": {
-                "360ONE.NS": 0.125,
-                "NBCC.NS": 0.125,
-                "NATCOPHARM.NS": 0.125,
-                "MCX.NS": 0.125,
-                "BECTORFOOD.NS": 0.125,
-                "MPHASIS.NS": 0.125,
-                "MOTILALOFS.NS": 0.125,
-                "MSUMI.NS": 0.125
-            },
-            "sell_price": 124087.77
-        },
-        {
-            "buy_date": "2023-10-16 00:00:00",
-            "sell_date": "2024-01-16 00:00:00",
-            "portfolio": {
-                "360ONE.NS": 0.125,
                 "MPHASIS.NS": 0.125,
                 "MOTILALOFS.NS": 0.125,
                 "MSUMI.NS": 0.125,
                 "MIDHANI.NS": 0.125,
                 "MINDACORP.NS": 0.125,
-                "METROPOLIS.NS": 0.125,
-                "METROBRAND.NS": 0.125
+                "METROPOLIS.NS": 0.125
             },
-            "sell_price": 111853.73
+            "sell_price": 112919.59
         },
         {
-            "buy_date": "2023-10-17 00:00:00",
-            "sell_date": "2024-01-17 00:00:00",
+            "buy_date": "2023-10-13 00:00:00",
+            "sell_date": "2024-01-15 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
                 "NATCOPHARM.NS": 0.125,
@@ -1392,11 +1432,11 @@
                 "MSUMI.NS": 0.125,
                 "MIDHANI.NS": 0.125
             },
-            "sell_price": 115461.79
+            "sell_price": 117882.32
         },
         {
-            "buy_date": "2023-10-18 00:00:00",
-            "sell_date": "2024-01-18 00:00:00",
+            "buy_date": "2023-10-16 00:00:00",
+            "sell_date": "2024-01-16 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
                 "MOTILALOFS.NS": 0.125,
@@ -1407,22 +1447,52 @@
                 "METROBRAND.NS": 0.125,
                 "MAZDOCK.NS": 0.125
             },
-            "sell_price": 112672.72
+            "sell_price": 111607.99
+        },
+        {
+            "buy_date": "2023-10-17 00:00:00",
+            "sell_date": "2024-01-17 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "MCX.NS": 0.125,
+                "BECTORFOOD.NS": 0.125,
+                "MPHASIS.NS": 0.125,
+                "MOTILALOFS.NS": 0.125,
+                "MSUMI.NS": 0.125,
+                "MIDHANI.NS": 0.125,
+                "MINDACORP.NS": 0.125
+            },
+            "sell_price": 118045.89
+        },
+        {
+            "buy_date": "2023-10-18 00:00:00",
+            "sell_date": "2024-01-18 00:00:00",
+            "portfolio": {
+                "360ONE.NS": 0.125,
+                "MSUMI.NS": 0.125,
+                "MIDHANI.NS": 0.125,
+                "MINDACORP.NS": 0.125,
+                "METROPOLIS.NS": 0.125,
+                "METROBRAND.NS": 0.125,
+                "MAZDOCK.NS": 0.125,
+                "MFSL.NS": 0.125
+            },
+            "sell_price": 105735.23
         },
         {
             "buy_date": "2023-10-19 00:00:00",
             "sell_date": "2024-01-19 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
-                "MINDACORP.NS": 0.125,
                 "METROPOLIS.NS": 0.125,
                 "METROBRAND.NS": 0.125,
                 "MAZDOCK.NS": 0.125,
                 "MFSL.NS": 0.125,
                 "MASTEK.NS": 0.125,
-                "MARUTI.NS": 0.125
+                "MARUTI.NS": 0.125,
+                "MARICO.NS": 0.125
             },
-            "sell_price": 106875.93
+            "sell_price": 105311.63
         },
         {
             "buy_date": "2023-10-20 00:00:00",
@@ -1474,15 +1544,15 @@
             "sell_date": "2024-01-29 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
-                "MASTEK.NS": 0.125,
                 "MARUTI.NS": 0.125,
                 "MARICO.NS": 0.125,
                 "MRPL.NS": 0.125,
                 "MANINFRA.NS": 0.125,
                 "MAHLIFE.NS": 0.125,
-                "MHRIL.NS": 0.125
+                "MHRIL.NS": 0.125,
+                "MAHSEAMLES.NS": 0.125
             },
-            "sell_price": 125676.39
+            "sell_price": 128628.97
         },
         {
             "buy_date": "2023-10-27 00:00:00",
@@ -1519,45 +1589,45 @@
             "sell_date": "2024-01-31 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
-                "MHRIL.NS": 0.125,
                 "MAHSEAMLES.NS": 0.125,
                 "LODHA.NS": 0.125,
                 "MTARTECH.NS": 0.125,
                 "MSTCLTD.NS": 0.125,
                 "MRF.NS": 0.125,
-                "MOIL.NS": 0.125
+                "MOIL.NS": 0.125,
+                "MASFIN.NS": 0.125
             },
-            "sell_price": 139329.68
+            "sell_price": 140894.12
         },
         {
             "buy_date": "2023-11-01 00:00:00",
             "sell_date": "2024-02-01 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
-                "MARUTI.NS": 0.125,
                 "MRPL.NS": 0.125,
                 "MANAPPURAM.NS": 0.125,
                 "MANINFRA.NS": 0.125,
                 "MHRIL.NS": 0.125,
                 "MAHSEAMLES.NS": 0.125,
-                "LODHA.NS": 0.125
+                "LODHA.NS": 0.125,
+                "MTARTECH.NS": 0.125
             },
-            "sell_price": 133061.08
+            "sell_price": 130244.06
         },
         {
             "buy_date": "2023-11-02 00:00:00",
             "sell_date": "2024-02-02 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
-                "MFSL.NS": 0.125,
                 "MASTEK.NS": 0.125,
                 "MARUTI.NS": 0.125,
                 "MANKIND.NS": 0.125,
                 "MRPL.NS": 0.125,
                 "MANAPPURAM.NS": 0.125,
-                "MANINFRA.NS": 0.125
+                "MANINFRA.NS": 0.125,
+                "MHRIL.NS": 0.125
             },
-            "sell_price": 129858.63
+            "sell_price": 130478.76
         },
         {
             "buy_date": "2023-11-03 00:00:00",
@@ -1579,15 +1649,15 @@
             "sell_date": "2024-02-06 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
-                "MAYURUNIQ.NS": 0.125,
                 "MFSL.NS": 0.125,
                 "MASTEK.NS": 0.125,
                 "MARUTI.NS": 0.125,
                 "MARKSANS.NS": 0.125,
                 "MRPL.NS": 0.125,
-                "MANAPPURAM.NS": 0.125
+                "MANAPPURAM.NS": 0.125,
+                "MANINFRA.NS": 0.125
             },
-            "sell_price": 125729.17
+            "sell_price": 131996.64
         },
         {
             "buy_date": "2023-11-07 00:00:00",
@@ -1609,15 +1679,15 @@
             "sell_date": "2024-02-08 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
-                "MINDACORP.NS": 0.125,
                 "METROPOLIS.NS": 0.125,
                 "METROBRAND.NS": 0.125,
                 "MAZDOCK.NS": 0.125,
                 "MAYURUNIQ.NS": 0.125,
                 "MFSL.NS": 0.125,
-                "MASTEK.NS": 0.125
+                "MASTEK.NS": 0.125,
+                "MARUTI.NS": 0.125
             },
-            "sell_price": 110846.45
+            "sell_price": 109029.08
         },
         {
             "buy_date": "2023-11-09 00:00:00",
@@ -1639,15 +1709,15 @@
             "sell_date": "2024-02-12 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
-                "METROPOLIS.NS": 0.125,
                 "METROBRAND.NS": 0.125,
                 "MAZDOCK.NS": 0.125,
                 "MAYURUNIQ.NS": 0.125,
                 "MFSL.NS": 0.125,
                 "MASTEK.NS": 0.125,
-                "MARUTI.NS": 0.125
+                "MARUTI.NS": 0.125,
+                "MARKSANS.NS": 0.125
             },
-            "sell_price": 106737.24
+            "sell_price": 107931.79
         },
         {
             "buy_date": "2023-11-13 00:00:00",
@@ -1699,45 +1769,45 @@
             "sell_date": "2024-02-19 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
-                "MINDACORP.NS": 0.125,
                 "METROPOLIS.NS": 0.125,
                 "METROBRAND.NS": 0.125,
                 "MAZDOCK.NS": 0.125,
                 "MFSL.NS": 0.125,
                 "MASTEK.NS": 0.125,
-                "MARUTI.NS": 0.125
+                "MARUTI.NS": 0.125,
+                "MARKSANS.NS": 0.125
             },
-            "sell_price": 114179.66
+            "sell_price": 112947.65
         },
         {
             "buy_date": "2023-11-20 00:00:00",
             "sell_date": "2024-02-20 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
-                "MRPL.NS": 0.125,
                 "MANAPPURAM.NS": 0.125,
                 "MANINFRA.NS": 0.125,
                 "MAHLIFE.NS": 0.125,
                 "MHRIL.NS": 0.125,
                 "MAHSEAMLES.NS": 0.125,
-                "LODHA.NS": 0.125
+                "LODHA.NS": 0.125,
+                "MSTCLTD.NS": 0.125
             },
-            "sell_price": 136880.17
+            "sell_price": 134914.68
         },
         {
             "buy_date": "2023-11-21 00:00:00",
             "sell_date": "2024-02-21 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
+                "MFSL.NS": 0.125,
                 "MASTEK.NS": 0.125,
                 "MARUTI.NS": 0.125,
                 "MRPL.NS": 0.125,
                 "MANAPPURAM.NS": 0.125,
                 "MANINFRA.NS": 0.125,
-                "MAHLIFE.NS": 0.125,
-                "MHRIL.NS": 0.125
+                "MAHLIFE.NS": 0.125
             },
-            "sell_price": 132714.9
+            "sell_price": 131518.64
         },
         {
             "buy_date": "2023-11-22 00:00:00",
@@ -1774,30 +1844,30 @@
             "sell_date": "2024-02-26 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
+                "MSTCLTD.NS": 0.125,
                 "MRF.NS": 0.125,
                 "MOIL.NS": 0.125,
                 "MASFIN.NS": 0.125,
                 "LUPIN.NS": 0.125,
                 "LINDEINDIA.NS": 0.125,
-                "LEMONTREE.NS": 0.125,
-                "LXCHEM.NS": 0.125
+                "LEMONTREE.NS": 0.125
             },
-            "sell_price": 106845.83
+            "sell_price": 121567.72
         },
         {
             "buy_date": "2023-11-28 00:00:00",
             "sell_date": "2024-02-28 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
+                "MOIL.NS": 0.125,
                 "MASFIN.NS": 0.125,
                 "LUPIN.NS": 0.125,
                 "LEMONTREE.NS": 0.125,
                 "LATENTVIEW.NS": 0.125,
                 "LT.NS": 0.125,
-                "LTIM.NS": 0.125,
-                "LICHSGFIN.NS": 0.125
+                "LTIM.NS": 0.125
             },
-            "sell_price": 110084.93
+            "sell_price": 103853.27
         },
         {
             "buy_date": "2023-11-29 00:00:00",
@@ -1894,19 +1964,19 @@
             "sell_date": "2024-03-07 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
+                "LTTS.NS": 0.125,
                 "L&TFH.NS": 0.125,
                 "KOLTEPATIL.NS": 0.125,
                 "KIRLOSENG.NS": 0.125,
                 "KFINTECH.NS": 0.125,
                 "KKCL.NS": 0.125,
-                "KAYNES.NS": 0.125,
-                "KSCL.NS": 0.125
+                "KAYNES.NS": 0.125
             },
-            "sell_price": 113414.64
+            "sell_price": 112770.8
         },
         {
             "buy_date": "2023-12-08 00:00:00",
-            "sell_date": "2024-03-07 00:00:00",
+            "sell_date": "2024-03-11 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
                 "LICHSGFIN.NS": 0.125,
@@ -1917,26 +1987,26 @@
                 "KFINTECH.NS": 0.125,
                 "KKCL.NS": 0.125
             },
-            "sell_price": 111774.79
+            "sell_price": 110093.95
         },
         {
             "buy_date": "2023-12-11 00:00:00",
-            "sell_date": "2024-03-07 00:00:00",
+            "sell_date": "2024-03-11 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
+                "LATENTVIEW.NS": 0.125,
                 "LT.NS": 0.125,
                 "LTIM.NS": 0.125,
                 "LICHSGFIN.NS": 0.125,
                 "LTTS.NS": 0.125,
                 "L&TFH.NS": 0.125,
-                "KOLTEPATIL.NS": 0.125,
-                "KIRLOSENG.NS": 0.125
+                "KOLTEPATIL.NS": 0.125
             },
-            "sell_price": 108000.1
+            "sell_price": 103932.7
         },
         {
             "buy_date": "2023-12-12 00:00:00",
-            "sell_date": "2024-03-07 00:00:00",
+            "sell_date": "2024-03-12 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
                 "MOIL.NS": 0.125,
@@ -1947,11 +2017,11 @@
                 "LTIM.NS": 0.125,
                 "LICHSGFIN.NS": 0.125
             },
-            "sell_price": 110649.37
+            "sell_price": 108736.1
         },
         {
             "buy_date": "2023-12-13 00:00:00",
-            "sell_date": "2024-03-07 00:00:00",
+            "sell_date": "2024-03-13 00:00:00",
             "portfolio": {
                 "360ONE.NS": 0.125,
                 "MAHSEAMLES.NS": 0.125,
@@ -1962,7 +2032,7 @@
                 "LUPIN.NS": 0.125,
                 "LEMONTREE.NS": 0.125
             },
-            "sell_price": 113533.33
+            "sell_price": 104660.82
         }
     ]
 }
