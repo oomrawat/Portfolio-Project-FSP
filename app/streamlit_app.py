@@ -1,9 +1,83 @@
 import streamlit as st
-from recommendations import get_recommendations, get_pie_chart_data
+from recommendations import get_recommendations, get_pie_chart_data, get_selected_strategies_results, get_density_plot_data
 from datetime import date, timedelta
 import random
 import plotly.graph_objs as go
+import numpy as np
+import scipy.stats as stats
+import pandas as pd
 from plotly.subplots import make_subplots
+
+def show_results_chart():
+    data = get_selected_strategies_results()
+    data = data.set_index('Dates')
+
+    fig = make_subplots(rows=1, cols=1, specs=[[{'type':'xy'}]])
+    for column in data.columns:
+        fig.add_trace(go.Scatter(x=data.index, y=data[column], name=column, mode='lines+markers',
+                                hoverinfo='x+y', line=dict(width=2)))
+
+    fig.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='white'),
+        width = 650,
+        height = 500,
+        margin=dict(t=1, b=0, l=0, r=0),
+        legend=dict(orientation="h", y=1.05, x=0.5, xanchor='center', yanchor='bottom')
+    )
+
+    # Update y-axis to display values as is with two decimal places
+    fig.update_yaxes(tickformat=".2f")
+
+    st.plotly_chart(fig)
+
+def show_density_plot():
+    data = get_density_plot_data()
+    data = data.set_index(keys='Date')
+
+    # Create subplots
+    fig = make_subplots(rows=1, cols=1)
+
+    # Create a KDE plot for each strategy within a specified x range
+    x_range = np.linspace(-0.10, 0.20, 500)
+    for column in data.columns:
+        kde = stats.gaussian_kde(data[column])
+        kde_values = kde(x_range)
+        fig.add_trace(go.Scatter(
+            x=x_range, y=kde_values,
+            mode='lines', name=column,
+            fill=None  # Fill area under the KDE curve
+        ))
+
+    # Adding a vertical dotted line for the NIFTY 50 average return
+    nifty_50_avg_return = 0.0343  # Placeholder value for NIFTY 50 average return
+    fig.add_trace(go.Scatter(
+        x=[nifty_50_avg_return, nifty_50_avg_return], 
+        y=[0, 14], 
+        mode='lines', name='NIFTY 50 Average',
+        line=dict(dash='dot')
+    ))
+
+    # Update layout for the figure
+    fig.update_layout(
+        xaxis_title='Monthly Returns',
+        yaxis_title='Density',
+        xaxis_range=[-0.05, 0.18],  # Set x-axis range
+        width = 650,
+        height = 500,
+        margin=dict(t=0, b=0, l=0, r=0),
+        legend=dict(y=1, x=0.8, xanchor='left', yanchor='top'),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='white'),
+    )
+
+    # Update y-axis to display values as is with two decimal places
+    fig.update_yaxes(tickformat=".2f")
+
+    # Show the plot in the streamlit app
+    st.plotly_chart(fig)
 
 def show_pie_chart(pf, portfolio_weights_adjusted):
     pf_in = get_pie_chart_data(portfolio_weights_adjusted)
@@ -76,7 +150,7 @@ def main():
     **Disclaimer**: This application is part of a graduation project, and not meant to give investment ideas. For actual investment decisions, please consult a financial advisor.
     """)
 
-    tab1, tab2, tab3 = st.tabs(["Project Description", "Analysis and Backtesting Results", "Get Recommendations"])
+    tab1, tab2, tab3 = st.tabs(["Project Description", "Analysis and Results", "Get Recommendations"])
     
     with tab1:
         st.header("Project Description")
@@ -149,9 +223,108 @@ def main():
         """, unsafe_allow_html=True)
 
     with tab2:
-        st.header("Analysis and Backtesting Results")
-        st.markdown("This section can be used to present the analysis...")
-        # st.image('image2.jpg', caption="Sample Image for Analysis Results")
+        st.header("Analysis and Results")
+        st.markdown("""
+        <br>
+        
+        This section of the application delivers a detailed examination of our investment strategy development process, which is underpinned by an extremely rigorous methodology. From an initial set of 880 unique strategies, we meticulously filtered down to the five most promising strategies through multiple stages of selection. These strategies were judged across a variety of parameters to ensure robustness and potential for success.
+        
+        <br>
+                    
+        #### **Testing and Evaluation Details**:
+                    
+        All the strategies were first backtested for a period of 4 years from 1st January 2020 to 1st January 2024. Although, this evaluation is slightly skewed due to presence of survivorship bias (more details in the project report).
+        
+        Regardless of a bias present in that evaluation, it is extremely useful for strategy selection and comparative analysis that lead us to these 5 selected strategies through various stages of selection.
+
+        Post this, these 5 strategies were put to test during a live-testing phase from October 2023 to December 2023 wherein all possible portfolios that these strategies suggest on 59 market days were considered, and this was without a survivorship bias.
+        
+        Statistics and graphs showing the results of both of these testing processes can be found below.
+        
+        <br>            
+        
+        #### **Strategy 1 - Resilient Growth Strategist (S7-A7-T5)**:
+                    
+        With a formidable Compound Annual Growth Rate (CAGR) across several years and a high success rate in recent live testing, this strategy has emerged as a steadfast option for investors who seek growth coupled with resilience to market changes.
+
+        <br>        
+
+        #### **Strategy 2 - Steadfast Conservative (S5-A6-T5)**:
+            
+        Renowned for its unmatched success rate and minimal variance, the Steadfast Conservative strategy is crafted for investors who are risk-averse and desire stability and consistent performance.
+                    
+        <br>       
+                    
+        #### **Strategy 3 - Consistent Balanced (S5-A6-T7)**:
+        
+        With a solid track record of success and moderate returns, this strategy offers a balanced portfolio for investors seeking a dependable and measured approach to investing.
+                    
+        <br>     
+                    
+        #### **Strategy 4 - Emergent Opportunist (S3-A11-T3)**:
+                    
+        Targeting investors with a more aggressive risk appetite, this strategy stands out for its significant average monthly returns in recent testing, aligning with a philosophy of capitalizing on short-term market opportunities. 
+                    
+        <br>
+                    
+        #### **Strategy 5 - Dynamic Achiever (S3-A10-T3)**:
+        
+        The strategy's superior average monthly returns in the live test phase make it suitable for the assertive investor aiming for substantial growth through active market engagement.
+
+        """, unsafe_allow_html=True)
+
+        col1, spacer, col2 = st.columns([1, 0.1, 1])
+
+        with col1:
+            st.markdown("""
+            <br>
+                                    
+            #### **Backtesting Results (January 2020 - January 2024)**:
+                        
+            """, unsafe_allow_html=True)
+
+            show_results_chart()
+
+        with spacer:
+            st.write("")
+
+        with col2:
+            st.markdown("""
+            <br>    
+                                
+            #### **Live-Testing Results Density Plot (Oct 2023 - Dec 2023)**:
+                        
+            """, unsafe_allow_html=True)
+
+            show_density_plot()
+
+        st.markdown("""     
+        <br>
+                    
+        #### **Backtesting Statistics (January 2020 - January 2024)**:
+                    
+        """, unsafe_allow_html=True)
+
+        table_data = pd.read_csv('../data/backtesting_stats.csv')
+        html = table_data.to_html(index=False)
+        st.markdown(html, unsafe_allow_html=True)
+
+        st.markdown("""
+        <br>
+                    
+        #### **Live-Testing Statistics (October 2023 - December 2023)**:
+                    
+        """, unsafe_allow_html=True)
+
+        table_data = pd.read_csv('../data/livetesting_stats.csv')
+        html = table_data.to_html(index=False)
+        st.markdown(html, unsafe_allow_html=True)
+
+        st.markdown("""
+        <br>
+
+        #### **NOTE**: More details about the strategy combination codes mentioned above and methodology behind the strategy formation can be found in the project report.
+        """, unsafe_allow_html=True)
 
     with tab3:
         st.header("Get Recommendations")
@@ -162,7 +335,7 @@ def main():
         with col1:
             strategy = st.selectbox(
                 "Select Strategy",
-                ['Strategy 1', 'Strategy 2', 'Strategy 3'],
+                ['Strategy 1', 'Strategy 2', 'Strategy 3', 'Strategy 4', 'Strategy 5'],
                 key='strategy_selectbox',
                 help='Learn about strategies in the "Analysis and Backtesting Results" section before selecting.')
         
@@ -277,7 +450,6 @@ def main():
                         st.markdown(f'<h1 style="font-size: 1.2em; font-weight: normal;">Rebalancing Date: {sell_date}</h1>', unsafe_allow_html=True)
                         st.markdown(f'<h1 style="font-size: 1.2em; font-weight: normal;">Total Investment Value: ₹{str(round(total_investment,2))}</h1>', unsafe_allow_html=True)
                         st.markdown('<h1 style="font-size: 1.2em; font-weight: normal;">NOTE: Higher the investment value, more accurate is the weight allocation. Recommended amount is INR 1,00,000.</h1>', unsafe_allow_html=True)
-
 
             else:
                 investment_value_warning_placeholder.markdown("""

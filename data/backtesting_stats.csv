@@ -1,0 +1,6 @@
+Strategy,Combination Code,Success Rate,1Y CAGR,2Y CAGR,3Y CAGR,4Y CAGR,1Y Variance,2Y Variance,3Y Variance,4Y Variance,Rebalancing Period
+Strategy 1,S7-A7-T5,88.0%,128.0%,64.0%,74.0%,76.0%,2.0%,2.48%,2.98%,4.52%,3m
+Strategy 2,S5-A6-T5,75.0%,47.0%,19.0%,29.0%,28.0%,1.25%,1.64%,1.28%,1.52%,3m
+Strategy 3,S5-A6-T7,75.0%,47.0%,19.0%,29.0%,31.0%,1.25%,1.64%,1.29%,1.57%,3m
+Strategy 4,S3-A11-T3,81.0%,214.0%,83.0%,81.0%,84.0%,4.08%,6.04%,4.29%,4.08%,3m
+Strategy 5,S3-A10-T3,81.0%,200.0%,82.0%,81.0%,87.0%,3.75%,5.51%,3.91%,3.93%,3m

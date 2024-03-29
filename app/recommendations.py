@@ -4,9 +4,14 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
 from functions import stock_selection_weight_allocation_appversion, adjust_portfolio, generate_and_save_data, calculate_shares_to_buy_with_prices
 from datetime import datetime
-import matplotlib.pyplot as plt
-from matplotlib.patches import Patch
-import math
+
+def get_selected_strategies_results():
+    data = pd.read_csv('../data/selected_strategies_results.csv')
+    return data
+
+def get_density_plot_data():
+    data = pd.read_csv('../data/density_plot_data.csv')
+    return data
 
 def get_pie_chart_data(pf):
     current_dir = Path(__file__).resolve().parent
@@ -82,29 +87,37 @@ def get_recommendations(investment_value, strategy, buying_date, spinner_status,
 
     buying_date = str(buying_date)[:10]
 
+    bt_v_list = [(0,0), (1,1), (1,2), (2,1), (2,2), (0.5,0.5), (1,0.5), (0.5,1), (0.25,0.25), (0.5,0.25), (0.25,0.5)]
+
     if strategy == 'Strategy 1':
         stock_selection_strategy = 13
         weight_allocation_strategy = 7
-        last_x_years = 0.5
-        last_x_years_opt = 0.5
+        last_x_years = bt_v_list[5][0]
+        last_x_years_opt = bt_v_list[5][1]
     
     elif strategy == 'Strategy 2':
-        stock_selection_strategy = 10
-        weight_allocation_strategy = 8
-        last_x_years = 0.5
-        last_x_years_opt = 1
+        stock_selection_strategy = 9
+        weight_allocation_strategy = 6
+        last_x_years = bt_v_list[5][0]
+        last_x_years_opt = bt_v_list[5][1]
     
     elif strategy == 'Strategy 3':
-        stock_selection_strategy = 7
-        weight_allocation_strategy = 3
-        last_x_years = 0.25
-        last_x_years_opt = 0.5
+        stock_selection_strategy = 9
+        weight_allocation_strategy = 6
+        last_x_years = bt_v_list[7][0]
+        last_x_years_opt = bt_v_list[7][1]
     
     elif strategy == 'Strategy 4':
-        stock_selection_strategy = 13
-        weight_allocation_strategy = 5
-        last_x_years = 0.25
-        last_x_years_opt = 0.5
+        stock_selection_strategy = 5
+        weight_allocation_strategy = 11
+        last_x_years = bt_v_list[3][0]
+        last_x_years_opt = bt_v_list[3][1]
+    
+    elif strategy == 'Strategy 5':
+        stock_selection_strategy = 5
+        weight_allocation_strategy = 10
+        last_x_years = bt_v_list[3][0]
+        last_x_years_opt = bt_v_list[3][1]
     
     progress_callback(1, progress)
 
