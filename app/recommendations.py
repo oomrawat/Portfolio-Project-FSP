@@ -6,11 +6,15 @@ from functions import stock_selection_weight_allocation_appversion, adjust_portf
 from datetime import datetime
 
 def get_selected_strategies_results():
-    data = pd.read_csv('../data/selected_strategies_results.csv')
+    current_dir = Path(__file__).resolve().parent
+    csv_file = current_dir.parent / 'data' / 'selected_strategies_results.csv'
+    data = pd.read_csv(csv_file)
     return data
 
 def get_density_plot_data():
-    data = pd.read_csv('../data/density_plot_data.csv')
+    current_dir = Path(__file__).resolve().parent
+    csv_file = current_dir.parent / 'data' / 'density_plot_data.csv'
+    data = pd.read_csv(csv_file)
     return data
 
 def get_pie_chart_data(pf):
