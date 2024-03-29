@@ -2,6 +2,9 @@ import streamlit as st
 from recommendations import get_recommendations, get_pie_chart_data, get_selected_strategies_results, get_density_plot_data
 from datetime import date, timedelta
 import random
+from pathlib import Path
+import sys
+sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
 import plotly.graph_objs as go
 import numpy as np
 import scipy.stats as stats
@@ -304,8 +307,11 @@ def main():
         #### **Backtesting Statistics (January 2020 - January 2024)**:
                     
         """, unsafe_allow_html=True)
+        
+        current_dir = Path(__file__).resolve().parent
+        csv_file = current_dir.parent / 'data' / 'backtesting_stats.csv'
+        table_data = pd.read_csv(csv_file)
 
-        table_data = pd.read_csv('../data/backtesting_stats.csv')
         html = table_data.to_html(index=False)
         st.markdown(html, unsafe_allow_html=True)
 
@@ -316,7 +322,10 @@ def main():
                     
         """, unsafe_allow_html=True)
 
-        table_data = pd.read_csv('../data/livetesting_stats.csv')
+        current_dir = Path(__file__).resolve().parent
+        csv_file = current_dir.parent / 'data' / 'livetesting_stats.csv'
+        table_data = pd.read_csv(csv_file)
+
         html = table_data.to_html(index=False)
         st.markdown(html, unsafe_allow_html=True)
 
