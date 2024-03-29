@@ -129,7 +129,7 @@ def main():
                     
         -   Read the project report if you want to delve deeper into the methodolody and analysis of the project.
             
-        -   Choose one of the top 3 strategies according to your risk-appetite.
+        -   Choose one of the top strategies according to your risk-appetite.
 
         -   Choose a date, set an amount, and check the app's recommendations for you.  
                     
