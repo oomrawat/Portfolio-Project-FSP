@@ -498,6 +498,7 @@ def main():
         password = os.getenv('EMAIL_PASSWORD')
 
         print(password)
+        st.write(password)
 
         message = MIMEMultipart("alternative")
         message["Subject"] = "New Feedback Received"
