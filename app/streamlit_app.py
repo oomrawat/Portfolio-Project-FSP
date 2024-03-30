@@ -206,7 +206,7 @@ def main():
             
         -   Go through the results and analysis of the strategies.
                     
-        -   Read the project report if you want to delve deeper into the methodolody and analysis of the project.
+        -   Read the [project report](https://drive.google.com/drive/u/0/folders/1tYmcImmnLgvzahalI1mrp0nQ98nEewQ-) if you want to delve deeper into the methodolody and analysis of the project.
             
         -   Choose one of the top strategies according to your risk-appetite.
 
@@ -231,7 +231,7 @@ def main():
                     
         #### **Testing and Evaluation Details**:
                     
-        All the strategies were first backtested for a period of 4 years from 1st January 2020 to 1st January 2024. Although, this evaluation is slightly skewed due to presence of survivorship bias (more details in the project report).
+        All the strategies were first backtested for a period of 4 years from 1st January 2020 to 1st January 2024. Although, this evaluation is slightly skewed due to presence of survivorship bias (more details in the [project report](https://drive.google.com/drive/u/0/folders/1tYmcImmnLgvzahalI1mrp0nQ98nEewQ-)).
         
         Regardless of a bias present in that evaluation, it is extremely useful for strategy selection and comparative analysis that lead us to these 5 selected strategies through various stages of selection.
 
@@ -327,7 +327,7 @@ def main():
         st.markdown("""
         <br>
 
-        #### **NOTE**: More details about the strategy combination codes mentioned above and methodology behind the strategy formation can be found in the project report.
+        #### **NOTE**: More details about the strategy combination codes mentioned above and methodology behind the strategy formation can be found in the [project report](https://drive.google.com/drive/u/0/folders/1tYmcImmnLgvzahalI1mrp0nQ98nEewQ-).
         """, unsafe_allow_html=True)
 
     with tab3:
