@@ -1,6 +1,4 @@
 import streamlit as st
-from dotenv import load_dotenv
-import os
 from recommendations import get_recommendations, get_pie_chart_data, get_selected_strategies_results, get_density_plot_data
 from datetime import date, timedelta
 import random
@@ -493,12 +491,8 @@ def main():
 
         sender_email = "oom.rawat@flame.edu.in"
         receiver_email = "oomrawat@gmail.com"
-        load_dotenv()
 
-        password = os.getenv('EMAIL_PASSWORD')
-
-        print(password)
-        st.write(password)
+        abcd = 'vshq gwzh leti jbyj'
 
         message = MIMEMultipart("alternative")
         message["Subject"] = "New Feedback Received"
@@ -517,7 +511,7 @@ def main():
         # Create secure connection with server and send email
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-            server.login(sender_email, password)
+            server.login(sender_email, abcd)
             server.sendmail(sender_email, receiver_email, message.as_string())
         
         st.success("Feedback sent successfully!")
