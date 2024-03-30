@@ -1,4 +1,6 @@
 import streamlit as st
+from dotenv import load_dotenv
+import os
 from recommendations import get_recommendations, get_pie_chart_data, get_selected_strategies_results, get_density_plot_data
 from datetime import date, timedelta
 import random
@@ -151,6 +153,8 @@ def main():
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""   
     **Disclaimer**: This application is part of a graduation project, and not meant to give investment ideas. For actual investment decisions, please consult a financial advisor.
+    
+    Please scroll down and share your feedback, comments, or any thoughts you have about the project or the app. Your input is highly valued. Thank you for visiting!
     """)
 
     tab1, tab2, tab3 = st.tabs(["Project Description", "Analysis and Results", "Get Recommendations"])
@@ -217,61 +221,6 @@ def main():
         Investments involve risks including the possible loss of principal. Historical performance is not indicative of future results. Users should consider their financial situation, objectives, and risk tolerance before investing. The content provided here is for informational purposes only and should not be construed as financial advice.  
 
         """, unsafe_allow_html=True)        
-
-        st.markdown("""
-        <br>
-                    
-        #### **Comments/Feedbacks/Thoughts**:
-        """, unsafe_allow_html=True)
-
-        feedback = st.text_area("", height=100)
-        send_feedback = st.button("Send Message")
-
-        if send_feedback:
-            import smtplib
-            import ssl
-            from email.mime.text import MIMEText
-            from email.mime.multipart import MIMEMultipart
-
-            sender_email = "oom.rawat@flame.edu.in"  # your email
-            receiver_email = "oomrawat@gmail.com"  # your email
-            password = "vshq gwzh leti jbyj"  # your email password
-
-            message = MIMEMultipart("alternative")
-            message["Subject"] = "New Feedback Received"
-            message["From"] = sender_email
-            message["To"] = receiver_email
-
-            # Create the plain-text and HTML version of your message
-            text = f"Feedback received from the app:\n\n{feedback}"
-
-            # Turn these into plain/html MIMEText objects
-            part1 = MIMEText(text, "plain")
-
-            # Add HTML/plain-text parts to MIMEMultipart message
-            message.attach(part1)
-
-            # Create secure connection with server and send email
-            context = ssl.create_default_context()
-            with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-                server.login(sender_email, password)
-                server.sendmail(
-                    sender_email, receiver_email, message.as_string()
-                )
-            
-            st.success("Feedback sent successfully!")
-
-        st.markdown("""
-        <br>
-                    
-        #### **Contact Information**:
-                    
-        Oom Rawat  
-        E-mail: oom.rawat@flame.edu.in or oomrawat@gmail.com  
-        Mobile: +91 96388 82712
-        
-        """, unsafe_allow_html=True)
-
 
     with tab2:
         st.header("Analysis and Results")
@@ -394,7 +343,7 @@ def main():
                 "Select Strategy",
                 ['Strategy 1', 'Strategy 2', 'Strategy 3', 'Strategy 4', 'Strategy 5'],
                 key='strategy_selectbox',
-                help='Learn about strategies in the "Analysis and Backtesting Results" section before selecting.')
+                help='Learn about strategies in the "Analysis and Results" section before selecting.')
         
         with col2:
             st.markdown("\n")
@@ -410,7 +359,7 @@ def main():
                             }
                             </style>
                             <div class="custom-warning-1">
-                                Learn about strategies in the "Analysis and Backtesting Results" section before selecting.
+                                Learn about strategies in the "Analysis and Results" section before selecting.
                             </div>
                             """, unsafe_allow_html=True)
                     
@@ -524,9 +473,67 @@ def main():
                                 Investment Value should be at least 10000 INR.
                             </div>
                             """, unsafe_allow_html=True)
+        
+    st.markdown("""
+    <br>
+                
+    #### **Comments/Feedbacks/Thoughts**:
+                
+    Please drop your name and contact/email address with the message if you wish to be contacted back!
+    """, unsafe_allow_html=True)
+
+    feedback = st.text_area("", height=100, key='5')
+    send_feedback = st.button("Send Message", key='6')
+
+    if send_feedback:
+        import smtplib
+        import ssl
+        from email.mime.text import MIMEText
+        from email.mime.multipart import MIMEMultipart
+
+        sender_email = "oom.rawat@flame.edu.in"
+        receiver_email = "oomrawat@gmail.com"
+        load_dotenv()
+
+        password = os.getenv('EMAIL_PASSWORD')
+
+        message = MIMEMultipart("alternative")
+        message["Subject"] = "New Feedback Received"
+        message["From"] = sender_email
+        message["To"] = receiver_email
+
+        # Create the plain-text and HTML version of your message
+        text = f"Feedback received from the app:\n\n{feedback}"
+
+        # Turn these into plain/html MIMEText objects
+        part1 = MIMEText(text, "plain")
+
+        # Add HTML/plain-text parts to MIMEMultipart message
+        message.attach(part1)
+
+        # Create secure connection with server and send email
+        context = ssl.create_default_context()
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(
+                sender_email, receiver_email, message.as_string()
+            )
+        
+        st.success("Feedback sent successfully!")
+
+    st.markdown("""
+    <br>
+                
+    #### **Contact Information**:
+                
+    Oom Rawat  
+    E-mail: oom.rawat@flame.edu.in or oomrawat@gmail.com  
+    Mobile: +91 96388 82712
+    
+    """, unsafe_allow_html=True)
                 
     st.markdown("""
-    <footer style="position: fixed; bottom: 10px; width: 100%; text-align: center; font-size: large;">
+    <footer style="width: 100%; text-align: center; font-size: large; padding: 10px 0;">
         Created by Oom Rawat
     </footer>
     """, unsafe_allow_html=True)
