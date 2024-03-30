@@ -497,6 +497,8 @@ def main():
 
         password = os.getenv('EMAIL_PASSWORD')
 
+        print(password)
+
         message = MIMEMultipart("alternative")
         message["Subject"] = "New Feedback Received"
         message["From"] = sender_email
@@ -515,9 +517,7 @@ def main():
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
             server.login(sender_email, password)
-            server.sendmail(
-                sender_email, receiver_email, message.as_string()
-            )
+            server.sendmail(sender_email, receiver_email, message.as_string())
         
         st.success("Feedback sent successfully!")
 
