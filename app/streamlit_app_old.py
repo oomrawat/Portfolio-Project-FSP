@@ -216,62 +216,14 @@ def main():
         
         Investments involve risks including the possible loss of principal. Historical performance is not indicative of future results. Users should consider their financial situation, objectives, and risk tolerance before investing. The content provided here is for informational purposes only and should not be construed as financial advice.  
 
-        """, unsafe_allow_html=True)        
-
-        st.markdown("""
-        <br>
-                    
-        #### **Comments/Feedbacks/Thoughts**:
-        """, unsafe_allow_html=True)
-
-        feedback = st.text_area("", height=100)
-        send_feedback = st.button("Send Message")
-
-        if send_feedback:
-            import smtplib
-            import ssl
-            from email.mime.text import MIMEText
-            from email.mime.multipart import MIMEMultipart
-
-            sender_email = "oom.rawat@flame.edu.in"  # your email
-            receiver_email = "oomrawat@gmail.com"  # your email
-            password = "vshq gwzh leti jbyj"  # your email password
-
-            message = MIMEMultipart("alternative")
-            message["Subject"] = "New Feedback Received"
-            message["From"] = sender_email
-            message["To"] = receiver_email
-
-            # Create the plain-text and HTML version of your message
-            text = f"Feedback received from the app:\n\n{feedback}"
-
-            # Turn these into plain/html MIMEText objects
-            part1 = MIMEText(text, "plain")
-
-            # Add HTML/plain-text parts to MIMEMultipart message
-            message.attach(part1)
-
-            # Create secure connection with server and send email
-            context = ssl.create_default_context()
-            with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-                server.login(sender_email, password)
-                server.sendmail(
-                    sender_email, receiver_email, message.as_string()
-                )
-            
-            st.success("Feedback sent successfully!")
-
-        st.markdown("""
-        <br>
+        <br>        
                     
         #### **Contact Information**:
                     
         Oom Rawat  
         E-mail: oom.rawat@flame.edu.in or oomrawat@gmail.com  
         Mobile: +91 96388 82712
-        
         """, unsafe_allow_html=True)
-
 
     with tab2:
         st.header("Analysis and Results")
