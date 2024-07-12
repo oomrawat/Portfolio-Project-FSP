@@ -1,0 +1,10 @@
+Oom Rawat
+FSP Project - Digital Product
+
+Please access my digital product through the following links
+
+Web Application: https://portfolio-project-fsp-oomrawat.streamlit.app/
+
+Code Repository: https://github.com/oomrawat/Portfolio-Project-FSP
+
+Application Demo Video: https://drive.google.com/drive/folders/1fTnt0RPjvHrPP5MFAIhRHmcfx9aDo2Xd?usp=drive_link
