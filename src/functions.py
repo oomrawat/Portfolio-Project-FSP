@@ -34,7 +34,7 @@ def generate_and_save_data(start_date, end_date):
     """
     try:
         # Load the CSV file to get the list of symbols
-        file_path = '/Users/oomrawat/Desktop/04_FSP/FINC308 - Investment Analysis/Group Project/ind_niftytotalmarket_list.csv'  # Replace with your CSV file path
+        file_path = '../data/ind_niftytotalmarket_list.csv'  # Replace with your CSV file path
         df = pd.read_csv(file_path)
 
         # The symbols are in the third column
@@ -946,6 +946,7 @@ def calculate_shares_to_buy_with_prices(portfolio_weights, prices_df, buying_dat
     # -------- FOR STRICTLY LOWER -------- #
 
     # Step 3: Calculate initial number of shares to buy for each stock
+    print(initial_investment, share_prices, portfolio_weights)
     initial_shares = {stock: math.floor(initial_investment[stock]/share_prices[stock]) for stock in portfolio_weights.keys()}
 
     # Step 4: Adjust for stocks that are too expensive
